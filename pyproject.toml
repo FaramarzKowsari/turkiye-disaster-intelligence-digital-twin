@@ -26,6 +26,9 @@ dev = [
   "pytest>=8,<9",
   "ruff>=0.6,<1",
 ]
+app = [
+  "streamlit>=1.48,<2",
+]
 
 [project.scripts]
 disaster-twin = "turkiye_disaster_twin.cli:app"
