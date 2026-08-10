@@ -60,3 +60,33 @@ def _node_value(graph: nx.MultiDiGraph, node: Hashable, key: str) -> float:
     if value is None:
         raise ValueError(f"Graph node {node!r} has no {key!r} coordinate.")
     return float(value)
+
+
+def selected_edge_line_coordinates(
+    graph: nx.MultiDiGraph,
+    edge_ids,
+) -> tuple[list[float | None], list[float | None]]:
+    """Convert selected edge IDs into Plotly-compatible line coordinates."""
+    longitudes: list[float | None] = []
+    latitudes: list[float | None] = []
+
+    for u, v, key in edge_ids:
+        data = graph.get_edge_data(u, v, key)
+        if data is None:
+            continue
+        geometry = data.get("geometry")
+        if geometry is not None and hasattr(geometry, "coords"):
+            coords = list(geometry.coords)
+        else:
+            coords = [
+                (_node_value(graph, u, "x"), _node_value(graph, u, "y")),
+                (_node_value(graph, v, "x"), _node_value(graph, v, "y")),
+            ]
+
+        for lon, lat in coords:
+            longitudes.append(float(lon))
+            latitudes.append(float(lat))
+        longitudes.append(None)
+        latitudes.append(None)
+
+    return longitudes, latitudes

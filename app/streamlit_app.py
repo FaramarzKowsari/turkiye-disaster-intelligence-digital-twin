@@ -12,7 +12,12 @@ from turkiye_disaster_twin.data.osm import (
     load_drive_graph,
     load_emergency_facilities,
 )
-from turkiye_disaster_twin.visualization import graph_center, graph_line_coordinates
+from turkiye_disaster_twin.simulation.engine import run_snapshot
+from turkiye_disaster_twin.visualization import (
+    graph_center,
+    graph_line_coordinates,
+    selected_edge_line_coordinates,
+)
 
 AVATAR_URL = "https://avatars.githubusercontent.com/u/105053743?v=4&s=512"
 REPO_URL = "https://github.com/FaramarzKowsari/turkiye-disaster-intelligence-digital-twin"
@@ -37,6 +42,16 @@ COPY = {
         ),
         "live_tab": "Live Digital Twin",
         "research_tab": "Research Design",
+        "scenario_tab": "Scenario Lab",
+        "scenario_warning": "Synthetic stress test — not a real damage forecast.",
+        "scenario_severity": "Network disruption severity control",
+        "scenario_incidents": "Synthetic emergency incidents",
+        "scenario_responders": "Available responders",
+        "scenario_seed": "Random seed",
+        "scenario_run": "Run reproducible scenario",
+        "scenario_failed": "Failed directed edges",
+        "scenario_greedy": "Greedy baseline",
+        "scenario_global": "Global min-cost assignment",
         "author_tab": "About the Author",
         "district": "Pilot district",
         "days": "AFAD lookback (days)",
@@ -82,6 +97,16 @@ COPY = {
         ),
         "live_tab": "Canlı Dijital İkiz",
         "research_tab": "Araştırma Tasarımı",
+        "scenario_tab": "Senaryo Laboratuvarı",
+        "scenario_warning": "Sentetik stres testi — gerçek hasar tahmini değildir.",
+        "scenario_severity": "Ağ kesintisi şiddet kontrolü",
+        "scenario_incidents": "Sentetik acil durum olayları",
+        "scenario_responders": "Kullanılabilir müdahale ekipleri",
+        "scenario_seed": "Rastgelelik tohumu",
+        "scenario_run": "Tekrar üretilebilir senaryoyu çalıştır",
+        "scenario_failed": "Kesilen yönlü yol kenarları",
+        "scenario_greedy": "Greedy temel yöntem",
+        "scenario_global": "Küresel minimum maliyetli atama",
         "author_tab": "Yazar Hakkında",
         "district": "Pilot ilçe",
         "days": "AFAD geriye dönük süre (gün)",
@@ -128,6 +153,16 @@ COPY = {
         ),
         "live_tab": "Gemelo Digital en Vivo",
         "research_tab": "Diseño de Investigación",
+        "scenario_tab": "Laboratorio de Escenarios",
+        "scenario_warning": "Prueba de estrés sintética; no es una previsión de daños reales.",
+        "scenario_severity": "Control de severidad de interrupción de la red",
+        "scenario_incidents": "Incidentes de emergencia sintéticos",
+        "scenario_responders": "Recursos de respuesta disponibles",
+        "scenario_seed": "Semilla aleatoria",
+        "scenario_run": "Ejecutar escenario reproducible",
+        "scenario_failed": "Aristas dirigidas interrumpidas",
+        "scenario_greedy": "Método base voraz",
+        "scenario_global": "Asignación global de coste mínimo",
         "author_tab": "Sobre el Autor",
         "district": "Distrito piloto",
         "days": "Periodo retrospectivo de AFAD (días)",
@@ -280,8 +315,8 @@ st.title(text["title"])
 st.caption(text["subtitle"])
 st.warning(text["boundary"])
 
-live_tab, research_tab, author_tab = st.tabs(
-    [text["live_tab"], text["research_tab"], text["author_tab"]]
+live_tab, scenario_tab, research_tab, author_tab = st.tabs(
+    [text["live_tab"], text["scenario_tab"], text["research_tab"], text["author_tab"]]
 )
 
 with live_tab:
@@ -318,6 +353,131 @@ with live_tab:
                 "The public app depends on the current availability and rate limits of "
                 "AFAD, OpenStreetMap Nominatim and Overpass services."
             )
+
+
+with scenario_tab:
+    st.warning(text["scenario_warning"])
+    scenario_columns = st.columns(4)
+    disruption_severity = scenario_columns[0].slider(
+        text["scenario_severity"],
+        0.0,
+        0.9,
+        0.25,
+        0.05,
+    )
+    incident_count = scenario_columns[1].slider(
+        text["scenario_incidents"],
+        2,
+        30,
+        10,
+    )
+    responder_count = scenario_columns[2].slider(
+        text["scenario_responders"],
+        1,
+        30,
+        8,
+    )
+    scenario_seed = scenario_columns[3].number_input(
+        text["scenario_seed"],
+        min_value=0,
+        max_value=1_000_000,
+        value=42,
+        step=1,
+    )
+
+    if st.button(text["scenario_run"], width="stretch"):
+        place = DISTRICTS[district_name]
+        try:
+            with st.spinner(text["loading"]):
+                scenario_graph = cached_graph(place)
+                center_lat, center_lon = graph_center(scenario_graph)
+                result = run_snapshot(
+                    scenario_graph,
+                    epicenter_lat=center_lat,
+                    epicenter_lon=center_lon,
+                    disruption_severity=disruption_severity,
+                    incident_count=incident_count,
+                    responder_count=responder_count,
+                    seed=int(scenario_seed),
+                )
+
+            st.metric(text["scenario_failed"], f"{len(result.failed_edges):,}")
+
+            comparison = {
+                text["scenario_greedy"]: result.greedy_metrics.to_dict(),
+                text["scenario_global"]: result.global_metrics.to_dict(),
+            }
+            st.dataframe(comparison, width="stretch")
+
+            base_lon, base_lat = graph_line_coordinates(result.disrupted_graph)
+            failed_lon, failed_lat = selected_edge_line_coordinates(
+                scenario_graph,
+                result.failed_edges,
+            )
+            scenario_figure = go.Figure()
+            scenario_figure.add_trace(
+                go.Scattermap(
+                    lon=base_lon,
+                    lat=base_lat,
+                    mode="lines",
+                    name="Available road network",
+                    hoverinfo="skip",
+                    line={"width": 1},
+                )
+            )
+            scenario_figure.add_trace(
+                go.Scattermap(
+                    lon=failed_lon,
+                    lat=failed_lat,
+                    mode="lines",
+                    name="Synthetic disrupted edges",
+                    hoverinfo="skip",
+                    line={"width": 3},
+                )
+            )
+
+            incident_nodes = [incident.node for incident in result.incidents]
+            scenario_figure.add_trace(
+                go.Scattermap(
+                    lon=[scenario_graph.nodes[node]["x"] for node in incident_nodes],
+                    lat=[scenario_graph.nodes[node]["y"] for node in incident_nodes],
+                    mode="markers",
+                    name="Synthetic incidents",
+                    text=[
+                        f"severity={incident.severity}"
+                        for incident in result.incidents
+                    ],
+                    hoverinfo="text",
+                    marker={"size": 11},
+                )
+            )
+            scenario_figure.add_trace(
+                go.Scattermap(
+                    lon=[scenario_graph.nodes[node]["x"] for node in result.responders],
+                    lat=[scenario_graph.nodes[node]["y"] for node in result.responders],
+                    mode="markers",
+                    name="Responders",
+                    hoverinfo="skip",
+                    marker={"size": 10},
+                )
+            )
+            scenario_figure.update_layout(
+                map={
+                    "style": "open-street-map",
+                    "center": {"lat": center_lat, "lon": center_lon},
+                    "zoom": 10,
+                },
+                margin={"l": 0, "r": 0, "t": 20, "b": 0},
+                height=650,
+                legend={"orientation": "h"},
+            )
+            st.plotly_chart(scenario_figure, width="stretch")
+            st.json(result.manifest)
+        # Public UI boundary: scenario execution can fail due to live OSM retrieval,
+        # graph construction, routing, or user-selected scenario constraints.
+        except Exception as exc:  # noqa: BLE001
+            st.error(f"Scenario execution failed: {exc}")
+
 
 with research_tab:
     st.subheader(text["research_heading"])

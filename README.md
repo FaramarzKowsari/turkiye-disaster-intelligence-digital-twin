@@ -82,6 +82,20 @@ versioned and served as a cached research artifact.
 No paid AI API key is required. At this stage, the map does **not** infer real road damage,
 building collapse, casualties or official resource availability.
 
+
+### Monte Carlo Scenario Engine — v0.2
+
+The project now includes a reproducible synthetic network stress-test layer. A scenario:
+
+1. builds an explicit edge-disruption probability field around a configurable scenario centre,
+2. samples directed road interruptions with a recorded random seed,
+3. generates synthetic emergency incidents and responder locations,
+4. evaluates the same disrupted graph with a sequential greedy baseline and a global min-cost assignment,
+5. reports reachability, response-time and weighted unmet-demand metrics.
+
+The disruption field is deliberately labelled **synthetic**. It is not a structural fragility model,
+official damage estimate or earthquake forecast.
+
 ### Core metrics
 
 - mean, median and p90 response time
@@ -166,6 +180,20 @@ sürümlenecek ve önbelleğe alınmış bir araştırma çıktısı olarak sunu
 
 Ücretli bir yapay zekâ API anahtarı gerekmez. Bu aşamada harita gerçek yol hasarı, bina çökmesi,
 can kaybı veya resmî kaynak mevcudiyeti tahmini yapmaz.
+
+
+### Monte Carlo Senaryo Motoru — v0.2
+
+Proje artık tekrar üretilebilir sentetik bir ağ stres testi katmanı içerir. Her senaryo:
+
+1. yapılandırılabilir senaryo merkezi çevresinde açık bir yol kesintisi olasılık alanı oluşturur,
+2. kaydedilmiş rastgelelik tohumu ile yönlü yol kesintilerini örnekler,
+3. sentetik acil durum olayları ve müdahale ekibi konumları üretir,
+4. aynı kesintili graf üzerinde sıralı greedy temel yöntem ile küresel minimum maliyetli atamayı karşılaştırır,
+5. erişilebilirlik, müdahale süresi ve ağırlıklı karşılanamayan talep ölçütlerini raporlar.
+
+Kesinti alanı açıkça **sentetik** olarak etiketlenir; yapısal kırılganlık modeli, resmî hasar tahmini
+veya deprem öngörüsü değildir.
 
 ### Temel ölçütler
 
@@ -253,6 +281,20 @@ versionará y almacenará en caché un grafo que abarque todo Estambul.
 
 No se necesita ninguna clave de API de IA de pago. En esta fase, el mapa no infiere daños reales
 en carreteras, derrumbes de edificios, víctimas ni disponibilidad oficial de recursos.
+
+
+### Motor de Escenarios Monte Carlo — v0.2
+
+El proyecto incorpora ahora una capa reproducible de pruebas sintéticas de estrés de red. Cada escenario:
+
+1. crea un campo explícito de probabilidades de interrupción viaria alrededor de un centro configurable,
+2. muestrea interrupciones dirigidas con una semilla aleatoria registrada,
+3. genera incidentes de emergencia y ubicaciones de recursos de respuesta sintéticos,
+4. compara sobre el mismo grafo alterado un método voraz secuencial y una asignación global de coste mínimo,
+5. informa de accesibilidad, tiempos de respuesta y demanda ponderada no atendida.
+
+El campo de interrupción está etiquetado expresamente como **sintético**. No es un modelo de
+fragilidad estructural, una estimación oficial de daños ni una predicción sísmica.
 
 ### Métricas principales
 
