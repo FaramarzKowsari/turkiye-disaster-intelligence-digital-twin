@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "turkiye-disaster-intelligence-digital-twin"
+version = "0.1.0"
+description = "Research-grade digital twin testbed for earthquake emergency response in Türkiye."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{name = "Faramarz Kowsari"}]
+dependencies = [
+  "httpx>=0.27,<1",
+  "pydantic>=2.8,<3",
+  "typer>=0.12,<1",
+  "networkx>=3.3,<4",
+  "numpy>=1.26,<3",
+  "pandas>=2.2,<3",
+  "geopandas>=1.0,<2",
+  "shapely>=2.0,<3",
+  "osmnx>=2.0,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<9",
+  "ruff>=0.6,<1",
+]
+
+[project.scripts]
+disaster-twin = "turkiye_disaster_twin.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
