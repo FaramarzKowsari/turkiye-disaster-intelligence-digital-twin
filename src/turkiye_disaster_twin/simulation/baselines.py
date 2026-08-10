@@ -115,7 +115,7 @@ def min_cost_global_assignment(
     if not costs:
         return []
 
-    cardinality = int(nx.maximum_flow_value(flow_graph, source, sink))
+    cardinality = nx.maximum_flow_value(flow_graph, source, sink)
     if cardinality <= 0:
         return []
 

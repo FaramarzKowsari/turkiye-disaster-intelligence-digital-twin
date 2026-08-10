@@ -30,7 +30,6 @@ def response_metrics(
     incidents: list[Incident],
 ) -> ResponseMetrics:
     """Calculate snapshot response metrics without inventing operational meaning."""
-    incident_map = {incident.node: incident for incident in incidents}
     assigned_nodes = {assignment.incident for assignment in assignments}
     times = [float(assignment.travel_time) for assignment in assignments]
 
