@@ -1,8 +1,8 @@
 from __future__ import annotations
 
+from collections.abc import Hashable, Iterable
 from dataclasses import dataclass
 from random import Random
-from typing import Hashable, Iterable
 
 
 @dataclass(frozen=True)
