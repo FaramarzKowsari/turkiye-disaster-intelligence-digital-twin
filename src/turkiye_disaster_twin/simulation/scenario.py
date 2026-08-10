@@ -11,9 +11,9 @@ import networkx as nx
 
 @dataclass(frozen=True)
 class EdgeRisk:
-    edge_id: tuple[Hashable, Hashable, Hashable]
+    edge_id: Hashable
     failure_probability: float
-    distance_km: float
+    distance_km: float = 0.0
 
 
 @dataclass(frozen=True)
@@ -75,10 +75,10 @@ def sample_failed_edges(
     risks: Iterable[EdgeRisk],
     *,
     seed: int,
-) -> set[tuple[Hashable, Hashable, Hashable]]:
+) -> set[Hashable]:
     """Sample synthetic road failures reproducibly from explicit probabilities."""
     rng = Random(seed)
-    failed: set[tuple[Hashable, Hashable, Hashable]] = set()
+    failed: set[Hashable] = set()
 
     for risk in risks:
         p = min(max(risk.failure_probability, 0.0), 1.0)
