@@ -109,7 +109,7 @@ def min_cost_global_assignment(
                 responder_nodes[responder_index],
                 incident_nodes[incident_index],
                 capacity=1,
-                weight=max(0, int(round(cost * 1000))),
+                weight=max(0, round(cost * 1000)),
             )
 
     if not costs:
