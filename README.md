@@ -64,6 +64,24 @@ Future public datasets ──────┘              │
                               Response + resilience metrics
 ```
 
+
+### Live Digital Twin — v0.1
+
+The public application can build a district-scale İstanbul digital twin on demand using:
+
+- live AFAD earthquake catalogue events within the İstanbul bounding region,
+- OpenStreetMap drivable road networks,
+- OpenStreetMap hospitals, clinics and fire stations,
+- an interactive MapLibre/Plotly map,
+- reproducible internal event normalisation.
+
+The first public deployment deliberately uses **district-scale road graphs** to keep live
+OpenStreetMap queries responsive. A city-wide İstanbul graph will later be preprocessed,
+versioned and served as a cached research artifact.
+
+No paid AI API key is required. At this stage, the map does **not** infer real road damage,
+building collapse, casualties or official resource availability.
+
 ### Core metrics
 
 - mean, median and p90 response time
@@ -130,6 +148,24 @@ Proje, İstanbul'u dinamik bir acil müdahale grafı olarak modeller. Deprem gö
 erişilebilirliği, acil yardım tesisleri, olay talebi ve sınırlı müdahale kaynakları tekrar
 üretilebilir senaryolarda bir araya getirilir. Araştırma yol haritası; açıklanabilir temel
 yöntemlerden sağlam optimizasyona, Graf Sinir Ağlarına ve Çok Etmenli Pekiştirmeli Öğrenmeye ilerler.
+
+
+### Canlı Dijital İkiz — v0.1
+
+Halka açık uygulama, isteğe bağlı olarak ilçe ölçeğinde bir İstanbul dijital ikizi oluşturabilir:
+
+- İstanbul coğrafi sınırındaki canlı AFAD deprem katalog olayları,
+- OpenStreetMap sürüş yolu ağı,
+- OpenStreetMap hastane, klinik ve itfaiye tesisleri,
+- etkileşimli MapLibre/Plotly haritası,
+- tekrar üretilebilir dahili olay normalizasyonu.
+
+İlk halka açık sürüm, canlı OpenStreetMap sorgularını hızlı ve kararlı tutmak için bilinçli olarak
+**ilçe ölçeğinde yol grafı** kullanır. İstanbul'un tamamını kapsayan ağ daha sonra önceden işlenecek,
+sürümlenecek ve önbelleğe alınmış bir araştırma çıktısı olarak sunulacaktır.
+
+Ücretli bir yapay zekâ API anahtarı gerekmez. Bu aşamada harita gerçek yol hasarı, bina çökmesi,
+can kaybı veya resmî kaynak mevcudiyeti tahmini yapmaz.
 
 ### Temel ölçütler
 
@@ -198,6 +234,25 @@ sísmicas, la accesibilidad viaria, las instalaciones de emergencia, la demanda 
 los recursos limitados se integran en escenarios reproducibles. La línea de investigación
 avanza desde métodos de referencia interpretables hacia optimización robusta, Redes Neuronales
 de Grafos y Aprendizaje por Refuerzo Multiagente.
+
+
+### Gemelo Digital en Vivo — v0.1
+
+La aplicación pública puede construir bajo demanda un gemelo digital de Estambul a escala de
+distrito utilizando:
+
+- eventos del catálogo sísmico de AFAD para el ámbito geográfico de Estambul,
+- redes viarias transitables de OpenStreetMap,
+- hospitales, clínicas y parques de bomberos de OpenStreetMap,
+- un mapa interactivo con MapLibre/Plotly,
+- normalización reproducible de los eventos en un esquema interno estable.
+
+La primera versión pública utiliza deliberadamente **grafos viarios a escala de distrito** para
+mantener ágiles y estables las consultas en vivo a OpenStreetMap. Más adelante se preprocesará,
+versionará y almacenará en caché un grafo que abarque todo Estambul.
+
+No se necesita ninguna clave de API de IA de pago. En esta fase, el mapa no infiere daños reales
+en carreteras, derrumbes de edificios, víctimas ni disponibilidad oficial de recursos.
 
 ### Métricas principales
 

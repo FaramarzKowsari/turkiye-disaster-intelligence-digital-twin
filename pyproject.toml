@@ -28,6 +28,7 @@ dev = [
 ]
 app = [
   "streamlit>=1.48,<2",
+  "plotly>=6.0,<7",
 ]
 
 [project.scripts]
