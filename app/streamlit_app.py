@@ -1,13 +1,17 @@
 from __future__ import annotations
 
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 
 import plotly.graph_objects as go
 import streamlit as st
 
 from turkiye_disaster_twin.config import ISTANBUL_BOUNDS
 from turkiye_disaster_twin.data.afad import fetch_events_frame
-from turkiye_disaster_twin.data.osm import facility_points, load_drive_graph, load_emergency_facilities
+from turkiye_disaster_twin.data.osm import (
+    facility_points,
+    load_drive_graph,
+    load_emergency_facilities,
+)
 from turkiye_disaster_twin.visualization import graph_center, graph_line_coordinates
 
 AVATAR_URL = "https://avatars.githubusercontent.com/u/105053743?v=4&s=512"
@@ -165,7 +169,7 @@ COPY = {
 
 @st.cache_data(ttl=900, show_spinner=False)
 def cached_afad(days: int, minimum_magnitude: float):
-    end = datetime.now(timezone.utc)
+    end = datetime.now(UTC)
     start = end - timedelta(days=days)
     return fetch_events_frame(
         start,
@@ -306,7 +310,9 @@ with live_tab:
                 build_map(graph, facilities, events, text["map_title"]),
                 width="stretch",
             )
-        except Exception as exc:
+        # Public UI boundary: failures can originate from external data services,
+        # network transport, parsing, geocoding, Overpass, or graph construction.
+        except Exception as exc:  # noqa: BLE001
             st.error(f"Live data retrieval failed: {exc}")
             st.caption(
                 "The public app depends on the current availability and rate limits of "
