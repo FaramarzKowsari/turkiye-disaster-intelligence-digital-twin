@@ -4,7 +4,6 @@ from collections.abc import Hashable, Iterable
 from statistics import mean
 
 import networkx as nx
-import numpy as np
 import pandas as pd
 
 from turkiye_disaster_twin.simulation.baselines import Assignment
