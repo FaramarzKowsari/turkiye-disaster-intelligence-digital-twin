@@ -1,0 +1,95 @@
+name: Research Benchmark
+
+on:
+  workflow_dispatch:
+    inputs:
+      place:
+        description: İstanbul pilot district
+        required: true
+        default: "Beykoz, İstanbul, Türkiye"
+        type: choice
+        options:
+          - "Beykoz, İstanbul, Türkiye"
+          - "Üsküdar, İstanbul, Türkiye"
+          - "Kadıköy, İstanbul, Türkiye"
+          - "Fatih, İstanbul, Türkiye"
+          - "Beşiktaş, İstanbul, Türkiye"
+      realizations:
+        description: Monte Carlo realisations per severity
+        required: true
+        default: "100"
+        type: choice
+        options:
+          - "100"
+          - "500"
+          - "1000"
+      severities:
+        description: Comma-separated synthetic disruption severities
+        required: true
+        default: "0.10,0.25,0.40"
+        type: string
+      incidents:
+        description: Synthetic incidents per realisation
+        required: true
+        default: "10"
+        type: string
+      responders:
+        description: Responders per realisation
+        required: true
+        default: "8"
+        type: string
+      base_seed:
+        description: Base random seed
+        required: true
+        default: "2026"
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install research dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[research]"
+
+      - name: Run paper-grade benchmark
+        run: |
+          python scripts/run_paper_benchmark.py \
+            --place "${{ inputs.place }}" \
+            --realizations "${{ inputs.realizations }}" \
+            --severities "${{ inputs.severities }}" \
+            --incidents "${{ inputs.incidents }}" \
+            --responders "${{ inputs.responders }}" \
+            --base-seed "${{ inputs.base_seed }}" \
+            --bootstrap-resamples 5000 \
+            --permutation-samples 10000 \
+            --output "artifacts/research-benchmark-${{ github.run_id }}"
+
+      - name: Verify research bundle
+        run: |
+          test -f "artifacts/research-benchmark-${{ github.run_id }}/raw_experiments.csv"
+          test -f "artifacts/research-benchmark-${{ github.run_id }}/raw_experiments.parquet"
+          test -f "artifacts/research-benchmark-${{ github.run_id }}/paired_inference.csv"
+          test -f "artifacts/research-benchmark-${{ github.run_id }}/manifest.json"
+          test -f "artifacts/research-benchmark-${{ github.run_id }}/SHA256SUMS"
+
+      - name: Upload research artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: disaster-twin-paper-benchmark-${{ github.run_id }}
+          path: artifacts/research-benchmark-${{ github.run_id }}/
+          retention-days: 30
+          if-no-files-found: error

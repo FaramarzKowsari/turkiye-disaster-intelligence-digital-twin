@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "turkiye-disaster-intelligence-digital-twin"
-version = "0.1.0"
+version = "0.4.0"
 description = "Research-grade digital twin testbed for earthquake emergency response in Türkiye."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -29,6 +29,9 @@ dev = [
 app = [
   "streamlit>=1.48,<2",
   "plotly>=6.0,<7",
+]
+research = [
+  "pyarrow>=17,<22",
 ]
 
 [project.scripts]
