@@ -1,0 +1,17 @@
+severity_control,algorithm,target_reachability_pct,reliability_target_pct,minimum_responders,mean_reachability_at_frontier_pct,target_service_probability_at_frontier_pct,frontier_found
+0.1,global_min_cost,80.0,80.0,10.0,87.6,94.0,True
+0.1,greedy,80.0,80.0,10.0,87.4,92.0,True
+0.12,global_min_cost,80.0,80.0,10.0,85.8,86.0,True
+0.12,greedy,80.0,80.0,10.0,85.8,86.0,True
+0.13,global_min_cost,80.0,80.0,12.0,88.8,92.0,True
+0.13,greedy,80.0,80.0,12.0,88.8,92.0,True
+0.14,global_min_cost,80.0,80.0,12.0,86.2,84.0,True
+0.14,greedy,80.0,80.0,12.0,85.8,84.0,True
+0.15,global_min_cost,80.0,80.0,,,,False
+0.15,greedy,80.0,80.0,,,,False
+0.16,global_min_cost,80.0,80.0,16.0,83.6,82.0,True
+0.16,greedy,80.0,80.0,16.0,83.0,82.0,True
+0.18,global_min_cost,80.0,80.0,,,,False
+0.18,greedy,80.0,80.0,,,,False
+0.2,global_min_cost,80.0,80.0,,,,False
+0.2,greedy,80.0,80.0,,,,False

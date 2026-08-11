@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from collections.abc import Hashable, Iterable
+from random import Random
 from statistics import mean
 
 import networkx as nx
@@ -9,9 +10,9 @@ import pandas as pd
 from turkiye_disaster_twin.simulation.baselines import Assignment
 from turkiye_disaster_twin.simulation.metrics import response_metrics
 from turkiye_disaster_twin.simulation.scenario import (
+    EdgeRisk,
     apply_failed_edges,
     edge_disruption_risks,
-    sample_failed_edges,
     sample_snapshot_entities,
 )
 from turkiye_disaster_twin.simulation.statistics import (
@@ -167,6 +168,57 @@ def _global_from_costs(
     return assignments
 
 
+
+def _coupled_failed_edges_by_severity(
+    risks_by_severity: dict[float, list[EdgeRisk]],
+    *,
+    seed: int,
+) -> dict[float, set[Hashable]]:
+    """Sample one latent failure field and threshold it at every severity.
+
+    The same random uniform value is assigned to each edge across all severity
+    levels. Because edge-failure probabilities are monotone in the synthetic
+    severity control, failed-edge sets must be nested as severity increases.
+    """
+    severities = sorted(risks_by_severity)
+    if not severities:
+        raise ValueError("At least one severity risk field is required.")
+
+    reference = risks_by_severity[severities[0]]
+    rng = Random(seed)
+    uniforms = [rng.random() for _ in reference]
+    previous_probabilities = [0.0] * len(reference)
+    previous_failed: set[Hashable] = set()
+    failed_by_severity: dict[float, set[Hashable]] = {}
+
+    for severity in severities:
+        risks = risks_by_severity[severity]
+        if len(risks) != len(reference):
+            raise ValueError("Severity risk fields do not contain the same edges.")
+
+        failed: set[Hashable] = set()
+
+        for index, (reference_risk, risk, draw) in enumerate(
+            zip(reference, risks, uniforms, strict=True)
+        ):
+            if risk.edge_id != reference_risk.edge_id:
+                raise ValueError("Severity risk fields are not edge-aligned.")
+            if risk.failure_probability + 1e-12 < previous_probabilities[index]:
+                raise ValueError("Edge failure probability decreased with severity.")
+
+            previous_probabilities[index] = risk.failure_probability
+            if draw < risk.failure_probability:
+                failed.add(risk.edge_id)
+
+        if not previous_failed.issubset(failed):
+            raise RuntimeError("Coupled failed-edge sets are not nested by severity.")
+
+        failed_by_severity[severity] = failed
+        previous_failed = failed
+
+    return failed_by_severity
+
+
 def run_phase_transition_experiment(
     graph: nx.MultiDiGraph,
     *,
@@ -179,19 +231,21 @@ def run_phase_transition_experiment(
     base_seed: int = 4040,
     decay_km: float = 8.0,
 ) -> pd.DataFrame:
-    """Sweep disruption severity and nested responder availability.
+    """Sweep severity and resources with common random numbers on both axes.
 
-    For each severity/seed pair, road failures and incident locations are sampled
-    exactly once. A maximum responder pool is also sampled once; lower-resource
-    conditions use deterministic prefixes of that same pool. This common-random-
-    numbers design reduces noise when measuring the marginal value of resources.
+    Each realisation defines one latent world: incident locations, a maximum
+    responder pool, and one random edge-failure field. Every severity level
+    thresholds that same edge field, so higher severity can only add failures.
+    Lower-resource conditions use deterministic prefixes of the same responder
+    pool. This paired design makes phase-boundary estimates substantially less
+    noisy and guarantees nested synthetic damage states across severity.
     """
     if realizations < 1:
         raise ValueError("realizations must be at least 1")
     if incident_count < 1:
         raise ValueError("incident_count must be positive")
 
-    severity_values = [float(value) for value in severities]
+    severity_values = sorted({float(value) for value in severities})
     if not severity_values:
         raise ValueError("At least one severity is required.")
     if any(value < 0.0 or value > 1.0 for value in severity_values):
@@ -203,31 +257,39 @@ def run_phase_transition_experiment(
     if incident_count + max_responders > graph.number_of_nodes():
         raise ValueError("The graph does not contain enough nodes for the requested entities.")
 
-    records: list[dict[str, int | float | str | None]] = []
-
-    for severity_index, severity in enumerate(severity_values):
-        risks = edge_disruption_risks(
+    risks_by_severity = {
+        severity: edge_disruption_risks(
             graph,
             epicenter_lat=epicenter_lat,
             epicenter_lon=epicenter_lon,
             severity=severity,
             decay_km=decay_km,
         )
+        for severity in severity_values
+    }
 
-        for realization in range(realizations):
-            seed = base_seed + severity_index * 1_000_000 + realization
-            failed_edges = sample_failed_edges(risks, seed=seed)
+    records: list[dict[str, int | float | str | None]] = []
+
+    for realization in range(realizations):
+        seed = base_seed + realization
+        failed_by_severity = _coupled_failed_edges_by_severity(
+            risks_by_severity,
+            seed=seed,
+        )
+
+        incidents, responder_pool = sample_snapshot_entities(
+            graph,
+            incident_count=incident_count,
+            responder_count=max_responders,
+            epicenter_lat=epicenter_lat,
+            epicenter_lon=epicenter_lon,
+            seed=seed + 1,
+        )
+        incident_nodes = [incident.node for incident in incidents]
+
+        for severity in severity_values:
+            failed_edges = failed_by_severity[severity]
             disrupted = apply_failed_edges(graph, failed_edges)
-
-            incidents, responder_pool = sample_snapshot_entities(
-                graph,
-                incident_count=incident_count,
-                responder_count=max_responders,
-                epicenter_lat=epicenter_lat,
-                epicenter_lon=epicenter_lon,
-                seed=seed + 1,
-            )
-            incident_nodes = [incident.node for incident in incidents]
 
             costs = _travel_time_costs(
                 disrupted,

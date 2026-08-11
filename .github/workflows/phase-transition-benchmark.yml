@@ -1,4 +1,4 @@
-name: Phase Transition Benchmark
+name: Coupled Phase Boundary Benchmark
 
 on:
   workflow_dispatch:
@@ -17,21 +17,21 @@ on:
       realizations:
         description: Realisations per severity × responder cell
         required: true
-        default: "25"
+        default: "100"
         type: choice
         options:
-          - "25"
           - "50"
           - "100"
+          - "200"
       severities:
         description: Comma-separated synthetic disruption severities
         required: true
-        default: "0.05,0.10,0.15,0.20,0.25,0.30"
+        default: "0.10,0.12,0.13,0.14,0.15,0.16,0.18,0.20"
         type: string
       responders:
         description: Comma-separated responder counts
         required: true
-        default: "4,6,8,10,12,16"
+        default: "8,10,12,14,16,20,24,32"
         type: string
       incidents:
         description: Synthetic incidents per realisation
@@ -41,7 +41,7 @@ on:
       base_seed:
         description: Base random seed
         required: true
-        default: "4040"
+        default: "6060"
         type: string
 
 permissions:
@@ -65,7 +65,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e ".[research]"
 
-      - name: Run severity x responder benchmark
+      - name: Run coupled severity x responder benchmark
         run: |
           python scripts/run_phase_transition_benchmark.py \
             --place "${{ inputs.place }}" \
@@ -79,22 +79,22 @@ jobs:
             --reliability-target 80 \
             --bootstrap-resamples 3000 \
             --permutation-samples 5000 \
-            --output "artifacts/phase-transition-${{ github.run_id }}-attempt-${{ github.run_attempt }}"
+            --output "artifacts/coupled-phase-boundary-${{ github.run_id }}-attempt-${{ github.run_attempt }}"
 
-      - name: Verify phase-transition bundle
+      - name: Verify coupled phase-boundary bundle
         run: |
-          test -f "artifacts/phase-transition-${{ github.run_id }}-attempt-${{ github.run_attempt }}/raw_phase_experiments.csv"
-          test -f "artifacts/phase-transition-${{ github.run_id }}-attempt-${{ github.run_attempt }}/phase_surface.parquet"
-          test -f "artifacts/phase-transition-${{ github.run_id }}-attempt-${{ github.run_attempt }}/resource_frontier.csv"
-          test -f "artifacts/phase-transition-${{ github.run_id }}-attempt-${{ github.run_attempt }}/marginal_resource_gains.csv"
-          test -f "artifacts/phase-transition-${{ github.run_id }}-attempt-${{ github.run_attempt }}/paired_grid_inference.csv"
-          test -f "artifacts/phase-transition-${{ github.run_id }}-attempt-${{ github.run_attempt }}/manifest.json"
-          test -f "artifacts/phase-transition-${{ github.run_id }}-attempt-${{ github.run_attempt }}/SHA256SUMS"
+          test -f "artifacts/coupled-phase-boundary-${{ github.run_id }}-attempt-${{ github.run_attempt }}/raw_phase_experiments.csv"
+          test -f "artifacts/coupled-phase-boundary-${{ github.run_id }}-attempt-${{ github.run_attempt }}/phase_surface.parquet"
+          test -f "artifacts/coupled-phase-boundary-${{ github.run_id }}-attempt-${{ github.run_attempt }}/resource_frontier.csv"
+          test -f "artifacts/coupled-phase-boundary-${{ github.run_id }}-attempt-${{ github.run_attempt }}/marginal_resource_gains.csv"
+          test -f "artifacts/coupled-phase-boundary-${{ github.run_id }}-attempt-${{ github.run_attempt }}/paired_grid_inference.csv"
+          test -f "artifacts/coupled-phase-boundary-${{ github.run_id }}-attempt-${{ github.run_attempt }}/manifest.json"
+          test -f "artifacts/coupled-phase-boundary-${{ github.run_id }}-attempt-${{ github.run_attempt }}/SHA256SUMS"
 
-      - name: Upload phase-transition artifact
+      - name: Upload coupled phase-boundary artifact
         uses: actions/upload-artifact@v4
         with:
-          name: disaster-twin-phase-transition-${{ github.run_id }}-attempt-${{ github.run_attempt }}
-          path: artifacts/phase-transition-${{ github.run_id }}-attempt-${{ github.run_attempt }}/
+          name: disaster-twin-coupled-phase-boundary-${{ github.run_id }}-attempt-${{ github.run_attempt }}
+          path: artifacts/coupled-phase-boundary-${{ github.run_id }}-attempt-${{ github.run_attempt }}/
           retention-days: 30
           if-no-files-found: error
