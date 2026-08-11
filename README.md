@@ -96,6 +96,26 @@ The project now includes a reproducible synthetic network stress-test layer. A s
 The disruption field is deliberately labelled **synthetic**. It is not a structural fragility model,
 official damage estimate or earthquake forecast.
 
+### Monte Carlo Experiment Lab — v0.3
+
+The research platform now supports **paired Monte Carlo experiments** across multiple synthetic
+network-disruption severities. For every severity and random seed, Greedy and Global Minimum-Cost
+Assignment are evaluated on the **same disrupted graph, incident set and responder placement**.
+This paired design reduces noise from comparing unrelated random scenarios.
+
+The experiment layer produces:
+
+- raw realisation-level tables suitable for CSV export,
+- mean response and accessibility metrics,
+- approximate 95% confidence intervals using 1.96 × standard error,
+- paired Greedy-minus-Global comparisons,
+- algorithm win-rate summaries,
+- P90 response-time sensitivity curves across disruption severity.
+
+The public Streamlit interface intentionally caps batch size to keep the hosted app responsive.
+The underlying experiment engine is not tied to that UI limit and can later support larger offline
+runs for paper-grade analysis.
+
 ### Core metrics
 
 - mean, median and p90 response time
@@ -194,6 +214,27 @@ Proje artık tekrar üretilebilir sentetik bir ağ stres testi katmanı içerir.
 
 Kesinti alanı açıkça **sentetik** olarak etiketlenir; yapısal kırılganlık modeli, resmî hasar tahmini
 veya deprem öngörüsü değildir.
+
+### Monte Carlo Deney Laboratuvarı — v0.3
+
+Araştırma platformu artık birden fazla sentetik ağ kesintisi şiddetinde **eşleştirilmiş Monte Carlo
+deneyleri** çalıştırabilir. Her şiddet düzeyi ve rastgelelik tohumu için Greedy ile Küresel Minimum
+Maliyetli Atama, **aynı kesintili yol grafı, aynı olay kümesi ve aynı müdahale ekibi yerleşimi** üzerinde
+değerlendirilir. Bu eşleştirilmiş tasarım, ilgisiz rastgele senaryoları karşılaştırmaktan kaynaklanan
+gürültüyü azaltır.
+
+Deney katmanı şunları üretir:
+
+- CSV dışa aktarımına uygun gerçekleşme düzeyi ham tablolar,
+- ortalama müdahale ve erişilebilirlik ölçütleri,
+- 1,96 × standart hata yaklaşımıyla yaklaşık %95 güven aralıkları,
+- eşleştirilmiş Greedy eksi Global karşılaştırmaları,
+- algoritma kazanma oranları,
+- kesinti şiddetine göre P90 müdahale süresi duyarlılık eğrileri.
+
+Halka açık Streamlit arayüzü barındırılan uygulamanın hızlı kalması için deney büyüklüğünü bilinçli
+olarak sınırlar. Alttaki deney motoru bu arayüz sınırına bağlı değildir ve daha sonra makale düzeyinde
+daha büyük çevrimdışı deneyleri çalıştırabilir.
 
 ### Temel ölçütler
 
@@ -295,6 +336,27 @@ El proyecto incorpora ahora una capa reproducible de pruebas sintéticas de estr
 
 El campo de interrupción está etiquetado expresamente como **sintético**. No es un modelo de
 fragilidad estructural, una estimación oficial de daños ni una predicción sísmica.
+
+### Laboratorio de Experimentos Monte Carlo — v0.3
+
+La plataforma de investigación permite ahora ejecutar **experimentos Monte Carlo emparejados** con
+varios niveles sintéticos de interrupción de la red. Para cada nivel de severidad y cada semilla,
+Greedy y la Asignación Global de Coste Mínimo se evalúan sobre **el mismo grafo alterado, el mismo
+conjunto de incidentes y la misma ubicación de recursos de respuesta**. Este diseño emparejado reduce
+el ruido que aparecería al comparar escenarios aleatorios diferentes.
+
+La capa experimental genera:
+
+- tablas brutas por realización preparadas para exportación CSV,
+- métricas medias de respuesta y accesibilidad,
+- intervalos de confianza aproximados del 95 % mediante 1,96 × error estándar,
+- comparaciones emparejadas Greedy menos Global,
+- tasas de victoria por algoritmo,
+- curvas de sensibilidad del tiempo de respuesta P90 frente a la severidad de interrupción.
+
+La interfaz pública de Streamlit limita deliberadamente el tamaño de los lotes para mantener ágil
+la aplicación alojada. El motor experimental subyacente no depende de ese límite y podrá ejecutar
+más adelante campañas sin conexión de mayor tamaño para análisis con calidad de publicación.
 
 ### Métricas principales
 

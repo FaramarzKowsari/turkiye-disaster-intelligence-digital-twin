@@ -13,6 +13,11 @@ from turkiye_disaster_twin.data.osm import (
     load_emergency_facilities,
 )
 from turkiye_disaster_twin.simulation.engine import run_snapshot
+from turkiye_disaster_twin.simulation.experiment import (
+    paired_algorithm_comparison,
+    run_monte_carlo_experiment,
+    summarise_experiment,
+)
 from turkiye_disaster_twin.visualization import (
     graph_center,
     graph_line_coordinates,
@@ -52,6 +57,21 @@ COPY = {
         "scenario_failed": "Failed directed edges",
         "scenario_greedy": "Greedy baseline",
         "scenario_global": "Global min-cost assignment",
+        "experiment_tab": "Monte Carlo Experiment Lab",
+        "experiment_warning": (
+            "Matched synthetic experiments — exploratory uncertainty analysis, "
+            "not an operational forecast."
+        ),
+        "experiment_realizations": "Realisations per severity",
+        "experiment_severities": "Severity levels",
+        "experiment_incidents": "Incidents per realisation",
+        "experiment_responders": "Responders per realisation",
+        "experiment_seed": "Base seed",
+        "experiment_run": "Run Monte Carlo experiment",
+        "experiment_summary": "Mean metrics with approximate 95% confidence intervals",
+        "experiment_paired": "Paired Greedy vs Global comparison",
+        "experiment_download": "Download raw experiment CSV",
+        "experiment_chart": "P90 response sensitivity",
         "author_tab": "About the Author",
         "district": "Pilot district",
         "days": "AFAD lookback (days)",
@@ -75,9 +95,9 @@ COPY = {
             "transparent static baselines?"
         ),
         "stage": (
-            "v0.1 establishes reproducible live data ingestion and a visible graph twin. The next "
-            "scientific gate is calibrated scenario generation, followed by optimisation and only "
-            "then GNN/MARL."
+            "v0.3 adds paired Monte Carlo experiments, sensitivity analysis and uncertainty "
+            "summaries on top of the reproducible live-data and scenario layers. Capacity, repeated "
+            "dispatch and calibrated hazard models remain future research gates."
         ),
         "author_heading": "About the author",
         "role": "Author · Software Engineer · AI Researcher",
@@ -107,6 +127,21 @@ COPY = {
         "scenario_failed": "Kesilen yönlü yol kenarları",
         "scenario_greedy": "Greedy temel yöntem",
         "scenario_global": "Küresel minimum maliyetli atama",
+        "experiment_tab": "Monte Carlo Deney Laboratuvarı",
+        "experiment_warning": (
+            "Eşleştirilmiş sentetik deneyler — keşifsel belirsizlik analizi; "
+            "operasyonel tahmin değildir."
+        ),
+        "experiment_realizations": "Her şiddet düzeyi için gerçekleşme sayısı",
+        "experiment_severities": "Şiddet düzeyleri",
+        "experiment_incidents": "Her gerçekleşmedeki olay sayısı",
+        "experiment_responders": "Her gerçekleşmedeki müdahale ekibi sayısı",
+        "experiment_seed": "Temel rastgelelik tohumu",
+        "experiment_run": "Monte Carlo deneyini çalıştır",
+        "experiment_summary": "Yaklaşık %95 güven aralıklarıyla ortalama ölçütler",
+        "experiment_paired": "Eşleştirilmiş Greedy ve Global karşılaştırması",
+        "experiment_download": "Ham deney CSV dosyasını indir",
+        "experiment_chart": "P90 müdahale süresi duyarlılığı",
         "author_tab": "Yazar Hakkında",
         "district": "Pilot ilçe",
         "days": "AFAD geriye dönük süre (gün)",
@@ -130,9 +165,9 @@ COPY = {
             "süresini ve karşılanamayan talebi azaltabilir mi?"
         ),
         "stage": (
-            "v0.1 tekrar üretilebilir canlı veri alımını ve görünür bir graf dijital ikizini kurar. "
-            "Sonraki bilimsel eşik kalibre edilmiş senaryo üretimidir; ardından optimizasyon ve "
-            "ancak daha sonra GNN/MARL gelir."
+            "v0.3, tekrar üretilebilir canlı veri ve senaryo katmanlarının üzerine eşleştirilmiş "
+            "Monte Carlo deneyleri, duyarlılık analizi ve belirsizlik özetleri ekler. Kapasite, "
+            "tekrarlı yönlendirme ve kalibre edilmiş tehlike modelleri sonraki araştırma eşikleridir."
         ),
         "author_heading": "Yazar hakkında",
         "role": "Yazar · Yazılım Mühendisi · Yapay Zekâ Araştırmacısı",
@@ -163,6 +198,21 @@ COPY = {
         "scenario_failed": "Aristas dirigidas interrumpidas",
         "scenario_greedy": "Método base voraz",
         "scenario_global": "Asignación global de coste mínimo",
+        "experiment_tab": "Laboratorio de Experimentos Monte Carlo",
+        "experiment_warning": (
+            "Experimentos sintéticos emparejados para análisis exploratorio de incertidumbre; "
+            "no constituyen una previsión operativa."
+        ),
+        "experiment_realizations": "Realizaciones por nivel de severidad",
+        "experiment_severities": "Niveles de severidad",
+        "experiment_incidents": "Incidentes por realización",
+        "experiment_responders": "Recursos de respuesta por realización",
+        "experiment_seed": "Semilla base",
+        "experiment_run": "Ejecutar experimento Monte Carlo",
+        "experiment_summary": "Métricas medias con intervalos de confianza aproximados del 95 %",
+        "experiment_paired": "Comparación emparejada entre Greedy y Global",
+        "experiment_download": "Descargar CSV bruto del experimento",
+        "experiment_chart": "Sensibilidad del tiempo de respuesta P90",
         "author_tab": "Sobre el Autor",
         "district": "Distrito piloto",
         "days": "Periodo retrospectivo de AFAD (días)",
@@ -186,9 +236,10 @@ COPY = {
             "de respuesta y la demanda no atendida frente a métodos base estáticos y transparentes?"
         ),
         "stage": (
-            "La v0.1 establece ingestión reproducible de datos en vivo y un gemelo de grafos "
-            "visible. El siguiente umbral científico es la generación calibrada de escenarios; "
-            "después vendrán la optimización y, solo entonces, GNN/MARL."
+            "La v0.3 incorpora experimentos Monte Carlo emparejados, análisis de sensibilidad y "
+            "resúmenes de incertidumbre sobre las capas reproducibles de datos y escenarios. "
+            "La capacidad, el despacho repetido y los modelos de amenaza calibrados quedan como "
+            "siguientes umbrales de investigación."
         ),
         "author_heading": "Sobre el autor",
         "role": "Autor · Ingeniero de Software · Investigador en Inteligencia Artificial",
@@ -315,8 +366,14 @@ st.title(text["title"])
 st.caption(text["subtitle"])
 st.warning(text["boundary"])
 
-live_tab, scenario_tab, research_tab, author_tab = st.tabs(
-    [text["live_tab"], text["scenario_tab"], text["research_tab"], text["author_tab"]]
+live_tab, scenario_tab, experiment_tab, research_tab, author_tab = st.tabs(
+    [
+        text["live_tab"],
+        text["scenario_tab"],
+        text["experiment_tab"],
+        text["research_tab"],
+        text["author_tab"],
+    ]
 )
 
 with live_tab:
@@ -477,6 +534,116 @@ with scenario_tab:
         # graph construction, routing, or user-selected scenario constraints.
         except Exception as exc:  # noqa: BLE001
             st.error(f"Scenario execution failed: {exc}")
+
+
+with experiment_tab:
+    st.warning(text["experiment_warning"])
+
+    experiment_columns = st.columns(4)
+    experiment_realizations = experiment_columns[0].slider(
+        text["experiment_realizations"],
+        5,
+        30,
+        10,
+        5,
+    )
+    experiment_incidents = experiment_columns[1].slider(
+        text["experiment_incidents"],
+        2,
+        20,
+        8,
+    )
+    experiment_responders = experiment_columns[2].slider(
+        text["experiment_responders"],
+        1,
+        20,
+        8,
+    )
+    experiment_seed = experiment_columns[3].number_input(
+        text["experiment_seed"],
+        min_value=0,
+        max_value=10_000_000,
+        value=1000,
+        step=1,
+    )
+
+    severity_levels = st.multiselect(
+        text["experiment_severities"],
+        options=[0.05, 0.10, 0.25, 0.40, 0.55, 0.70],
+        default=[0.10, 0.25, 0.40],
+    )
+
+    if st.button(text["experiment_run"], width="stretch"):
+        if not severity_levels:
+            st.error(text["experiment_severities"])
+        else:
+            place = DISTRICTS[district_name]
+            try:
+                with st.spinner(text["loading"]):
+                    experiment_graph = cached_graph(place)
+                    experiment_lat, experiment_lon = graph_center(experiment_graph)
+                    experiment_frame = run_monte_carlo_experiment(
+                        experiment_graph,
+                        epicenter_lat=experiment_lat,
+                        epicenter_lon=experiment_lon,
+                        severities=severity_levels,
+                        realizations=experiment_realizations,
+                        incident_count=experiment_incidents,
+                        responder_count=experiment_responders,
+                        base_seed=int(experiment_seed),
+                    )
+                    experiment_summary = summarise_experiment(experiment_frame)
+                    paired_summary = paired_algorithm_comparison(experiment_frame)
+
+                st.subheader(text["experiment_summary"])
+                st.dataframe(experiment_summary, width="stretch")
+
+                st.subheader(text["experiment_paired"])
+                st.dataframe(paired_summary, width="stretch")
+
+                chart_data = experiment_summary[
+                    experiment_summary["metric"] == "p90_response_s"
+                ]
+                if not chart_data.empty:
+                    chart = go.Figure()
+                    for algorithm in ("greedy", "global_min_cost"):
+                        subset = chart_data[chart_data["algorithm"] == algorithm]
+                        if subset.empty:
+                            continue
+                        chart.add_trace(
+                            go.Scatter(
+                                x=subset["severity_control"],
+                                y=subset["mean"],
+                                mode="lines+markers",
+                                name=algorithm,
+                                error_y={
+                                    "type": "data",
+                                    "symmetric": False,
+                                    "array": subset["ci95_high"] - subset["mean"],
+                                    "arrayminus": subset["mean"] - subset["ci95_low"],
+                                },
+                            )
+                        )
+                    chart.update_layout(
+                        title=text["experiment_chart"],
+                        xaxis_title="severity_control",
+                        yaxis_title="p90_response_s",
+                        height=480,
+                    )
+                    st.plotly_chart(chart, width="stretch")
+
+                csv_bytes = experiment_frame.to_csv(index=False).encode("utf-8")
+                st.download_button(
+                    text["experiment_download"],
+                    data=csv_bytes,
+                    file_name="monte_carlo_experiment.csv",
+                    mime="text/csv",
+                    width="stretch",
+                )
+            # Public UI boundary: batch experiments can fail because of live OSM
+            # retrieval, graph routing, or user-selected scenario constraints.
+            except Exception as exc:  # noqa: BLE001
+                st.error(f"Experiment execution failed: {exc}")
 
 
 with research_tab:
