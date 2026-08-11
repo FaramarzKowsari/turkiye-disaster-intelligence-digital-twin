@@ -2,10 +2,10 @@ from __future__ import annotations
 
 import argparse
 import os
-from datetime import UTC, datetime
-from pathlib import Path
 import platform
 import sys
+from datetime import UTC, datetime
+from pathlib import Path
 
 from turkiye_disaster_twin.data.osm import load_drive_graph
 from turkiye_disaster_twin.research.phase_artifacts import (

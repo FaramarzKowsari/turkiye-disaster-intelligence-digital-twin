@@ -1,4 +1,3 @@
-import networkx as nx
 import pandas as pd
 
 from turkiye_disaster_twin.simulation.phase_transition import (

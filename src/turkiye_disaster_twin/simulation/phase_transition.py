@@ -10,7 +10,6 @@ import pandas as pd
 from turkiye_disaster_twin.simulation.baselines import Assignment
 from turkiye_disaster_twin.simulation.metrics import response_metrics
 from turkiye_disaster_twin.simulation.scenario import (
-    Incident,
     apply_failed_edges,
     edge_disruption_risks,
     sample_failed_edges,
@@ -33,7 +32,7 @@ COST_METRICS = (
 
 
 def _normalise_responder_counts(values: Iterable[int]) -> list[int]:
-    counts = sorted({int(value) for value in values})
+    counts = sorted(set(values))
     if not counts or counts[0] < 1:
         raise ValueError("Responder counts must contain positive integers.")
     return counts
@@ -217,7 +216,7 @@ def run_phase_transition_experiment(
         )
 
         for realization in range(realizations):
-            seed = int(base_seed + severity_index * 1_000_000 + realization)
+            seed = base_seed + severity_index * 1_000_000 + realization
             failed_edges = sample_failed_edges(risks, seed=seed)
             disrupted = apply_failed_edges(graph, failed_edges)
 
