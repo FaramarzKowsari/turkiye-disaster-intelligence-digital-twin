@@ -1,0 +1,24 @@
+{
+  "author": "Faramarz Kowsari",
+  "base_seed": 2026,
+  "bootstrap_resamples": 5000,
+  "created_at_utc": "2026-08-11T10:50:36.471601+00:00",
+  "damage_model_claim": false,
+  "git_sha": "163aa59f0745051ba67b2e4786b76081546ece3b",
+  "incident_count": 10,
+  "permutation_samples": 10000,
+  "place": "Beykoz, İstanbul, Türkiye",
+  "platform": "Linux-6.17.0-1020-azure-x86_64-with-glibc2.39",
+  "project": "Türkiye Disaster Intelligence Digital Twin",
+  "python_version": "3.11.15",
+  "realizations_per_severity": 100,
+  "responder_count": 8,
+  "scenario_type": "controlled_stochastic_stress_test",
+  "schema_version": "paper-grade-v0.4",
+  "severities": [
+    0.1,
+    0.25,
+    0.4
+  ],
+  "workflow_run_id": "31483492277"
+}

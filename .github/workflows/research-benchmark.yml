@@ -76,20 +76,20 @@ jobs:
             --base-seed "${{ inputs.base_seed }}" \
             --bootstrap-resamples 5000 \
             --permutation-samples 10000 \
-            --output "artifacts/research-benchmark-${{ github.run_id }}"
+            --output "artifacts/research-benchmark-${{ github.run_id }}-attempt-${{ github.run_attempt }}"
 
       - name: Verify research bundle
         run: |
-          test -f "artifacts/research-benchmark-${{ github.run_id }}/raw_experiments.csv"
-          test -f "artifacts/research-benchmark-${{ github.run_id }}/raw_experiments.parquet"
-          test -f "artifacts/research-benchmark-${{ github.run_id }}/paired_inference.csv"
-          test -f "artifacts/research-benchmark-${{ github.run_id }}/manifest.json"
-          test -f "artifacts/research-benchmark-${{ github.run_id }}/SHA256SUMS"
+          test -f "artifacts/research-benchmark-${{ github.run_id }}-attempt-${{ github.run_attempt }}/raw_experiments.csv"
+          test -f "artifacts/research-benchmark-${{ github.run_id }}-attempt-${{ github.run_attempt }}/raw_experiments.parquet"
+          test -f "artifacts/research-benchmark-${{ github.run_id }}-attempt-${{ github.run_attempt }}/paired_inference.csv"
+          test -f "artifacts/research-benchmark-${{ github.run_id }}-attempt-${{ github.run_attempt }}/manifest.json"
+          test -f "artifacts/research-benchmark-${{ github.run_id }}-attempt-${{ github.run_attempt }}/SHA256SUMS"
 
       - name: Upload research artifact
         uses: actions/upload-artifact@v4
         with:
-          name: disaster-twin-paper-benchmark-${{ github.run_id }}
-          path: artifacts/research-benchmark-${{ github.run_id }}/
+          name: disaster-twin-paper-benchmark-${{ github.run_id }}-attempt-${{ github.run_attempt }}
+          path: artifacts/research-benchmark-${{ github.run_id }}-attempt-${{ github.run_attempt }}/
           retention-days: 30
           if-no-files-found: error
