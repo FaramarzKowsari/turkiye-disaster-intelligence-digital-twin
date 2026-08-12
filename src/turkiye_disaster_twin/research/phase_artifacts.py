@@ -38,8 +38,9 @@ def write_phase_transition_bundle(
     marginal_gains: pd.DataFrame,
     paired_inference: pd.DataFrame,
     metadata: dict[str, Any],
+    extra_tables: dict[str, pd.DataFrame] | None = None,
 ) -> dict[str, Path]:
-    """Write all v0.5 phase-transition research products with checksums."""
+    """Write phase-transition research products with checksums."""
     destination = Path(output_dir)
     destination.mkdir(parents=True, exist_ok=True)
 
@@ -50,6 +51,12 @@ def write_phase_transition_bundle(
         "marginal_resource_gains": marginal_gains,
         "paired_grid_inference": paired_inference,
     }
+
+    if extra_tables:
+        overlap = set(tables).intersection(extra_tables)
+        if overlap:
+            raise ValueError(f"Duplicate artifact table names: {sorted(overlap)}")
+        tables.update(extra_tables)
 
     written: list[Path] = []
     outputs: dict[str, Path] = {}

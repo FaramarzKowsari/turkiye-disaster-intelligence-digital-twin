@@ -1,0 +1,110 @@
+name: Confirmatory Reliability Boundary Benchmark
+
+on:
+  workflow_dispatch:
+    inputs:
+      place:
+        description: İstanbul pilot district
+        required: true
+        default: "Beykoz, İstanbul, Türkiye"
+        type: choice
+        options:
+          - "Beykoz, İstanbul, Türkiye"
+          - "Üsküdar, İstanbul, Türkiye"
+          - "Kadıköy, İstanbul, Türkiye"
+          - "Fatih, İstanbul, Türkiye"
+          - "Beşiktaş, İstanbul, Türkiye"
+      realizations:
+        description: Coupled stochastic worlds
+        required: true
+        default: "300"
+        type: choice
+        options:
+          - "200"
+          - "300"
+          - "500"
+      severities:
+        description: High-resolution boundary grid
+        required: true
+        default: "0.130,0.135,0.140,0.145,0.150,0.1525,0.155,0.1575,0.160,0.1625,0.165"
+        type: string
+      responders:
+        description: Responder counts around the v0.6 frontier
+        required: true
+        default: "12,14,16,20,24,32"
+        type: string
+      incidents:
+        description: Synthetic incidents per world
+        required: true
+        default: "10"
+        type: string
+      base_seed:
+        description: Independent confirmatory base seed
+        required: true
+        default: "7070"
+        type: string
+      boundary_bootstrap_resamples:
+        description: World-level bootstrap resamples
+        required: true
+        default: "5000"
+        type: choice
+        options:
+          - "3000"
+          - "5000"
+          - "10000"
+
+permissions:
+  contents: read
+
+jobs:
+  confirmatory-boundary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install research dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[research]"
+
+      - name: Run confirmatory reliability-boundary benchmark
+        run: |
+          python scripts/run_confirmatory_boundary_benchmark.py \
+            --place "${{ inputs.place }}" \
+            --realizations "${{ inputs.realizations }}" \
+            --severities "${{ inputs.severities }}" \
+            --responders "${{ inputs.responders }}" \
+            --incidents "${{ inputs.incidents }}" \
+            --base-seed "${{ inputs.base_seed }}" \
+            --target-reachability 80 \
+            --reliability-target 80 \
+            --bootstrap-resamples "${{ inputs.boundary_bootstrap_resamples }}" \
+            --permutation-samples 5000 \
+            --output "artifacts/confirmatory-boundary-${{ github.run_id }}-attempt-${{ github.run_attempt }}"
+
+      - name: Verify confirmatory boundary bundle
+        run: |
+          ROOT="artifacts/confirmatory-boundary-${{ github.run_id }}-attempt-${{ github.run_attempt }}"
+          test -f "$ROOT/raw_phase_experiments.csv"
+          test -f "$ROOT/service_probability_curve.csv"
+          test -f "$ROOT/boundary_estimates.csv"
+          test -f "$ROOT/world_service_thresholds.csv"
+          test -f "$ROOT/monotonicity_audit.csv"
+          test -f "$ROOT/paired_grid_inference.parquet"
+          test -f "$ROOT/manifest.json"
+          test -f "$ROOT/SHA256SUMS"
+
+      - name: Upload confirmatory boundary artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: disaster-twin-confirmatory-boundary-${{ github.run_id }}-attempt-${{ github.run_attempt }}
+          path: artifacts/confirmatory-boundary-${{ github.run_id }}-attempt-${{ github.run_attempt }}/
+          retention-days: 30
+          if-no-files-found: error
