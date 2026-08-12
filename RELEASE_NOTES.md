@@ -2,6 +2,14 @@
 
 Release date: 2026-08-12
 
+## Persistent record
+
+- **Version DOI (v1.0.0):** https://doi.org/10.5281/zenodo.21903851
+- **Concept DOI (all versions):** https://doi.org/10.5281/zenodo.21903850
+- **GitHub release:** https://github.com/FaramarzKowsari/turkiye-disaster-intelligence-digital-twin/releases/tag/v1.0.0
+- **Detailed project page:** https://faramarzkowsari.github.io/turkiye-disaster-intelligence-digital-twin/project.html
+
+
 v1.0 closes the first research cycle of the Türkiye Disaster Intelligence Digital Twin.
 
 ## What is frozen

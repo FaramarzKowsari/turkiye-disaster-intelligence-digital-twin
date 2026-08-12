@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Project Details | Türkiye Disaster Intelligence Digital Twin v1.0.0</title>
+  <meta name="description" content="Detailed architecture, methodology, experimental design, results, reproducibility and citation information for the Türkiye Disaster Intelligence Digital Twin v1.0.0 research release.">
+  <meta name="author" content="Faramarz Kowsari">
+  <meta name="citation_title" content="Türkiye Disaster Intelligence Digital Twin">
+  <meta name="citation_author" content="Faramarz Kowsari">
+  <meta name="citation_publication_date" content="2026-08-12">
+  <meta name="citation_doi" content="10.5281/zenodo.21903851">
+  <meta name="citation_version" content="1.0.0">
+  <link rel="cite-as" href="https://doi.org/10.5281/zenodo.21903851">
+  <link rel="canonical" href="https://faramarzkowsari.github.io/turkiye-disaster-intelligence-digital-twin/project.html">
+  <link rel="stylesheet" href="assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "Türkiye Disaster Intelligence Digital Twin",
+    "version": "1.0.0",
+    "identifier": [
+      "https://doi.org/10.5281/zenodo.21903851",
+      "https://doi.org/10.5281/zenodo.21903850"
+    ],
+    "codeRepository": "https://github.com/FaramarzKowsari/turkiye-disaster-intelligence-digital-twin",
+    "url": "https://faramarzkowsari.github.io/turkiye-disaster-intelligence-digital-twin/project.html",
+    "programmingLanguage": "Python",
+    "license": "https://opensource.org/license/mit",
+    "author": {
+      "@type": "Person",
+      "name": "Faramarz Kowsari",
+      "sameAs": [
+        "https://orcid.org/0000-0003-1692-0453",
+        "https://github.com/FaramarzKowsari",
+        "https://www.linkedin.com/in/faramarzkowsari"
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="./">Türkiye Disaster Intelligence Digital Twin</a>
+    <div class="nav-right">
+      <div class="page-links">
+        <a href="./" data-en="Index" data-tr="Ana sayfa" data-es="Índice">Index</a>
+        <a href="research-findings.html" data-en="Findings" data-tr="Bulgular" data-es="Resultados">Findings</a>
+        <a href="https://github.com/FaramarzKowsari/turkiye-disaster-intelligence-digital-twin">GitHub</a>
+      </div>
+      <div class="lang-switch">
+        <button class="lang active" data-lang="en">English</button>
+        <button class="lang" data-lang="tr">Türkçe</button>
+        <button class="lang" data-lang="es">Español</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap project-hero">
+    <div>
+      <p class="eyebrow"
+         data-en="PROJECT DOSSIER · VERSION 1.0.0"
+         data-tr="PROJE DOSYASI · SÜRÜM 1.0.0"
+         data-es="DOSIER DEL PROYECTO · VERSIÓN 1.0.0">PROJECT DOSSIER · VERSION 1.0.0</p>
+      <h1 data-en="A reproducible digital twin for studying disaster-response reliability"
+          data-tr="Afet müdahale güvenilirliğini incelemek için tekrar üretilebilir bir dijital ikiz"
+          data-es="Un gemelo digital reproducible para estudiar la fiabilidad de la respuesta ante desastres">
+        A reproducible digital twin for studying disaster-response reliability
+      </h1>
+      <p class="lead"
+         data-en="This page documents the scientific question, data pipeline, graph model, coupled stochastic experiments, optimization baselines, confirmatory inference, final results and reproducibility record of the v1.0.0 release."
+         data-tr="Bu sayfa v1.0.0 sürümünün bilimsel sorusunu, veri hattını, graf modelini, eşleştirilmiş stokastik deneylerini, optimizasyon temel yöntemlerini, doğrulayıcı çıkarımını, nihai sonuçlarını ve tekrar üretilebilirlik kaydını belgeler."
+         data-es="Esta página documenta la pregunta científica, la canalización de datos, el modelo de grafos, los experimentos estocásticos acoplados, los métodos de optimización, la inferencia confirmatoria, los resultados finales y el registro de reproducibilidad de v1.0.0.">
+        This page documents the complete v1.0.0 research chain.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="https://doi.org/10.5281/zenodo.21903851">DOI 10.5281/zenodo.21903851</a>
+        <a class="button" href="https://doi.org/10.5281/zenodo.21903850"
+           data-en="Concept DOI · all versions" data-tr="Concept DOI · tüm sürümler" data-es="Concept DOI · todas las versiones">Concept DOI · all versions</a>
+        <a class="button" href="https://github.com/FaramarzKowsari/turkiye-disaster-intelligence-digital-twin/releases/tag/v1.0.0">GitHub v1.0.0</a>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <div class="metric"><strong>Beykoz</strong><span data-en="Pilot district · İstanbul" data-tr="Pilot ilçe · İstanbul" data-es="Distrito piloto · Estambul">Pilot district · İstanbul</span></div>
+      <div class="metric"><strong>80/80</strong><span data-en="Confirmatory reliability criterion" data-tr="Doğrulayıcı güvenilirlik ölçütü" data-es="Criterio confirmatorio de fiabilidad">Confirmatory reliability criterion</span></div>
+      <div class="metric"><strong>2</strong><span data-en="Frozen confirmatory runs" data-tr="Dondurulmuş doğrulayıcı koşu" data-es="Ejecuciones confirmatorias congeladas">Frozen confirmatory runs</span></div>
+      <div class="metric"><strong>7070</strong><span data-en="Base seed" data-tr="Temel tohum" data-es="Semilla base">Base seed</span></div>
+    </aside>
+  </section>
+
+  <section class="wrap doi-banner">
+    <div>
+      <span class="kicker" data-en="PERSISTENT RESEARCH RECORD" data-tr="KALICI ARAŞTIRMA KAYDI" data-es="REGISTRO PERSISTENTE DE INVESTIGACIÓN">PERSISTENT RESEARCH RECORD</span>
+      <strong>v1.0.0 DOI · 10.5281/zenodo.21903851</strong>
+      <span data-en="Concept DOI · 10.5281/zenodo.21903850 identifies the project across versions."
+            data-tr="Concept DOI · 10.5281/zenodo.21903850 projenin tüm sürümlerini temsil eder."
+            data-es="Concept DOI · 10.5281/zenodo.21903850 identifica el proyecto a través de todas sus versiones.">
+        Concept DOI · 10.5281/zenodo.21903850 identifies the project across versions.
+      </span>
+    </div>
+  </section>
+
+  <section class="section wrap" id="about">
+    <p class="eyebrow" data-en="ABOUT THE PROJECT" data-tr="PROJE HAKKINDA" data-es="SOBRE EL PROYECTO">ABOUT THE PROJECT</p>
+    <div class="two-col">
+      <div>
+        <h2 data-en="The research problem" data-tr="Araştırma problemi" data-es="El problema de investigación">The research problem</h2>
+        <p data-en="After a major disruption, adding more responders does not necessarily restore service if the road network itself has fragmented. The project asks where that transition occurs: when does emergency response stop being primarily an allocation problem and become a connectivity problem?"
+           data-tr="Büyük bir kesintiden sonra daha fazla müdahale ekibi eklemek, yol ağı parçalanmışsa hizmeti mutlaka geri getirmez. Proje şu geçişi araştırır: acil müdahale ne zaman ağırlıklı olarak bir kaynak atama problemi olmaktan çıkar ve bağlantılılık problemine dönüşür?"
+           data-es="Tras una gran interrupción, añadir más recursos no restablece necesariamente el servicio si la propia red viaria se ha fragmentado. El proyecto estudia dónde aparece esa transición: cuándo la respuesta deja de ser principalmente un problema de asignación y pasa a ser un problema de conectividad.">
+          After a major disruption, adding more responders does not necessarily restore service if the road network itself has fragmented.
+        </p>
+      </div>
+      <div class="callout">
+        <strong data-en="Scientific boundary" data-tr="Bilimsel sınır" data-es="Límite científico">Scientific boundary</strong>
+        <p data-en="The severity variable is a synthetic network-disruption control parameter. It is not earthquake magnitude, PGA, structural fragility, an official damage forecast or an operational emergency threshold."
+           data-tr="Severity değişkeni sentetik bir ağ kesintisi kontrol parametresidir. Deprem büyüklüğü, PGA, yapısal kırılganlık, resmî hasar tahmini veya operasyonel acil durum eşiği değildir."
+           data-es="La variable de severidad es un parámetro sintético de interrupción de red. No es magnitud sísmica, PGA, fragilidad estructural, una previsión oficial de daños ni un umbral operativo de emergencia.">
+          The severity variable is synthetic and must not be interpreted as earthquake magnitude.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <p class="eyebrow" data-en="RESEARCH OBJECTIVES" data-tr="ARAŞTIRMA HEDEFLERİ" data-es="OBJETIVOS DE INVESTIGACIÓN">RESEARCH OBJECTIVES</p>
+    <div class="grid">
+      <article class="card"><span class="index">01</span><h3 data-en="Build an inspectable network model" data-tr="Denetlenebilir ağ modeli kurmak" data-es="Construir un modelo de red inspeccionable">Build an inspectable network model</h3><p data-en="Represent roads, emergency facilities, incidents and responders in a directed graph that can be audited and rerun." data-tr="Yolları, acil tesisleri, olayları ve müdahale ekiplerini denetlenebilir ve yeniden çalıştırılabilir yönlü bir graf içinde temsil etmek." data-es="Representar carreteras, instalaciones de emergencia, incidentes y recursos en un grafo dirigido auditable y reproducible.">Represent the response system as an auditable directed graph.</p></article>
+      <article class="card"><span class="index">02</span><h3 data-en="Separate allocation from topology" data-tr="Atamayı topolojiden ayırmak" data-es="Separar asignación y topología">Separate allocation from topology</h3><p data-en="Compare transparent assignment methods while independently measuring whether incidents remain reachable in the disrupted network." data-tr="Şeffaf atama yöntemlerini karşılaştırırken olayların kesintili ağda erişilebilir kalıp kalmadığını bağımsız olarak ölçmek." data-es="Comparar métodos transparentes de asignación midiendo por separado si los incidentes siguen siendo alcanzables en la red interrumpida.">Measure algorithmic efficiency separately from network reachability.</p></article>
+      <article class="card"><span class="index">03</span><h3 data-en="Quantify a reliability boundary" data-tr="Güvenilirlik sınırını nicelleştirmek" data-es="Cuantificar una frontera de fiabilidad">Quantify a reliability boundary</h3><p data-en="Estimate the synthetic disruption level where the probability of retaining at least 80% reachability crosses 80%, with uncertainty." data-tr="En az %80 erişilebilirliğin korunma olasılığının %80 sınırını geçtiği sentetik kesinti düzeyini belirsizlikle birlikte tahmin etmek." data-es="Estimar, con incertidumbre, el nivel sintético de interrupción en el que la probabilidad de conservar al menos un 80% de accesibilidad cruza el 80%.">Estimate the 80/80 service-reliability boundary with uncertainty.</p></article>
+    </div>
+  </section>
+
+  <section class="section wrap" id="data">
+    <p class="eyebrow" data-en="DATA AND PROVENANCE" data-tr="VERİ VE KAYNAK İZLENEBİLİRLİĞİ" data-es="DATOS Y PROCEDENCIA">DATA AND PROVENANCE</p>
+    <h2 data-en="Public data enters a reproducible evidence chain" data-tr="Açık veri tekrar üretilebilir bir kanıt zincirine girer" data-es="Los datos públicos entran en una cadena reproducible de evidencia">Public data enters a reproducible evidence chain</h2>
+    <div class="mini-grid">
+      <div class="card"><strong>AFAD</strong><p data-en="Public earthquake catalogue access and normalization for research context." data-tr="Araştırma bağlamı için açık deprem katalog erişimi ve normalizasyonu." data-es="Acceso y normalización del catálogo público de terremotos para contexto de investigación.">Public earthquake catalogue access and normalization.</p></div>
+      <div class="card"><strong>OpenStreetMap</strong><p data-en="Road-network geometry and emergency-facility context for the Beykoz pilot graph." data-tr="Beykoz pilot grafı için yol ağı geometrisi ve acil tesis bağlamı." data-es="Geometría de la red viaria y contexto de instalaciones de emergencia para el grafo piloto de Beykoz.">Road-network geometry and emergency-facility context.</p></div>
+      <div class="card"><strong>SHA-256</strong><p data-en="Artifacts, frozen tables and manifests are preserved with checksums." data-tr="Artifact'ler, dondurulmuş tablolar ve manifestler checksum ile korunur." data-es="Los artefactos, tablas congeladas y manifiestos se conservan con checksums.">Frozen evidence is accompanied by integrity hashes.</p></div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="architecture">
+    <p class="eyebrow" data-en="SYSTEM ARCHITECTURE" data-tr="SİSTEM MİMARİSİ" data-es="ARQUITECTURA DEL SISTEMA">SYSTEM ARCHITECTURE</p>
+    <h2 data-en="From public data to frozen evidence" data-tr="Açık veriden dondurulmuş kanıta" data-es="De datos públicos a evidencia congelada">From public data to frozen evidence</h2>
+    <div class="flow">
+      <div class="flow-node"><span>1</span><strong data-en="Data" data-tr="Veri" data-es="Datos">Data</strong><small>AFAD + OSM</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node"><span>2</span><strong data-en="Graph" data-tr="Graf" data-es="Grafo">Graph</strong><small data-en="Directed road network" data-tr="Yönlü yol ağı" data-es="Red viaria dirigida">Directed road network</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node"><span>3</span><strong data-en="Disruption" data-tr="Kesinti" data-es="Interrupción">Disruption</strong><small data-en="Coupled stochastic worlds" data-tr="Eşleştirilmiş stokastik dünyalar" data-es="Mundos estocásticos acoplados">Coupled stochastic worlds</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node"><span>4</span><strong data-en="Decisions" data-tr="Kararlar" data-es="Decisiones">Decisions</strong><small>Greedy + Global Min-Cost</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node"><span>5</span><strong data-en="Inference" data-tr="Çıkarım" data-es="Inferencia">Inference</strong><small>Paired + bootstrap</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node"><span>6</span><strong data-en="Evidence" data-tr="Kanıt" data-es="Evidencia">Evidence</strong><small>GitHub + Zenodo DOI</small></div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="methods">
+    <p class="eyebrow" data-en="METHODS" data-tr="YÖNTEMLER" data-es="MÉTODOS">METHODS</p>
+    <div class="two-col">
+      <div>
+        <h2 data-en="Coupled stochastic severity worlds" data-tr="Eşleştirilmiş stokastik şiddet dünyaları" data-es="Mundos estocásticos de severidad acoplada">Coupled stochastic severity worlds</h2>
+        <p data-en="Within a stochastic world, the same edge-risk uniforms are reused as severity increases. Failed-edge sets therefore grow monotonically instead of being regenerated independently at each severity. This common-random-number design makes boundary comparisons more interpretable and reduces avoidable Monte Carlo noise."
+           data-tr="Bir stokastik dünya içinde şiddet arttıkça aynı kenar risk uniformları yeniden kullanılır. Böylece başarısız kenar kümeleri her şiddette bağımsız olarak yeniden üretilmek yerine monoton biçimde büyür. Bu ortak rastgele sayı tasarımı sınır karşılaştırmalarını daha yorumlanabilir kılar ve gereksiz Monte Carlo gürültüsünü azaltır."
+           data-es="Dentro de un mismo mundo estocástico se reutilizan los mismos uniformes de riesgo de arista a medida que aumenta la severidad. Los conjuntos de aristas fallidas crecen de forma monótona en lugar de regenerarse de manera independiente. El uso de números aleatorios comunes hace más interpretable la comparación de fronteras y reduce ruido Monte Carlo evitable.">
+          The same stochastic world is progressively stressed across severity.
+        </p>
+      </div>
+      <div>
+        <h2 data-en="Transparent decision baselines" data-tr="Şeffaf karar temel yöntemleri" data-es="Métodos de decisión transparentes">Transparent decision baselines</h2>
+        <p data-en="Sequential Greedy dispatch is compared with Global Minimum-Cost Assignment on identical scenarios. Because both algorithms see the same incidents, responders and disrupted graph, paired differences isolate the assignment effect rather than mixing it with scenario variation."
+           data-tr="Sıralı Greedy ataması, aynı senaryolarda Global Minimum-Cost Assignment ile karşılaştırılır. Her iki algoritma aynı olayları, ekipleri ve kesintili grafı gördüğü için eşleştirilmiş farklar senaryo değişkenliğini değil atama etkisini izole eder."
+           data-es="El despacho Greedy secuencial se compara con Global Minimum-Cost Assignment sobre escenarios idénticos. Como ambos algoritmos observan los mismos incidentes, recursos y grafo interrumpido, las diferencias emparejadas aíslan el efecto de asignación en lugar de mezclarlo con la variación del escenario.">
+          Greedy and Global Minimum-Cost Assignment are compared on identical scenarios.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="experiments">
+    <p class="eyebrow" data-en="EXPERIMENTAL DESIGN" data-tr="DENEY TASARIMI" data-es="DISEÑO EXPERIMENTAL">EXPERIMENTAL DESIGN</p>
+    <h2 data-en="A staged research cycle, ending in a confirmatory freeze" data-tr="Doğrulayıcı dondurma ile biten aşamalı araştırma döngüsü" data-es="Un ciclo de investigación por etapas que termina en una congelación confirmatoria">A staged research cycle, ending in a confirmatory freeze</h2>
+    <div class="step-grid">
+      <article class="card"><span class="pill">v0.3–v0.4</span><h3 data-en="Paired Monte Carlo" data-tr="Eşleştirilmiş Monte Carlo" data-es="Monte Carlo emparejado">Paired Monte Carlo</h3><p data-en="Repeated worlds, paired algorithm comparisons, uncertainty summaries and Holm multiple-testing correction." data-tr="Tekrarlanan dünyalar, eşleştirilmiş algoritma karşılaştırmaları, belirsizlik özetleri ve Holm çoklu test düzeltmesi." data-es="Mundos repetidos, comparaciones emparejadas, resúmenes de incertidumbre y corrección de Holm.">Repeated-world inference and corrected paired comparisons.</p></article>
+      <article class="card"><span class="pill">v0.5–v0.6</span><h3 data-en="Phase boundary" data-tr="Faz sınırı" data-es="Frontera de fase">Phase boundary</h3><p data-en="Severity × responder grids identify the region where connectivity begins to dominate resource availability." data-tr="Şiddet × ekip ızgaraları, bağlantılılığın kaynak mevcudiyetine baskın olmaya başladığı bölgeyi belirler." data-es="Las cuadrículas severidad × recursos identifican la zona donde la conectividad empieza a dominar la disponibilidad de recursos.">Severity-resource grids expose a transition region.</p></article>
+      <article class="card"><span class="pill">v0.7–v1.0</span><h3 data-en="Confirmatory boundary" data-tr="Doğrulayıcı sınır" data-es="Frontera confirmatoria">Confirmatory boundary</h3><p data-en="A fine grid, 300 coupled worlds and 5,000 world-cluster bootstrap resamples estimate the final 80/80 boundary and its uncertainty." data-tr="İnce ızgara, 300 eşleştirilmiş dünya ve 5.000 dünya-küme bootstrap yeniden örneklemesi nihai 80/80 sınırını ve belirsizliğini tahmin eder." data-es="Una cuadrícula fina, 300 mundos acoplados y 5.000 remuestreos bootstrap por mundo estiman la frontera final 80/80 y su incertidumbre.">Fine-grid confirmation closes the final boundary.</p></article>
+    </div>
+  </section>
+
+  <section class="section wrap" id="results">
+    <p class="eyebrow" data-en="FROZEN V1.0.0 RESULTS" data-tr="DONDURULMUŞ V1.0.0 SONUÇLARI" data-es="RESULTADOS CONGELADOS DE V1.0.0">FROZEN V1.0.0 RESULTS</p>
+    <h2 data-en="More responders move the boundary upward, but the gain is not linear" data-tr="Daha fazla ekip sınırı yükseltir; ancak kazanç doğrusal değildir" data-es="Más recursos elevan la frontera, pero la ganancia no es lineal">More responders move the boundary upward, but the gain is not linear</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th data-en="Responders" data-tr="Müdahale ekibi" data-es="Recursos">Responders</th><th data-en="Boundary estimate" data-tr="Sınır tahmini" data-es="Frontera estimada">Boundary estimate</th><th data-en="95% world-bootstrap interval" data-tr="%95 dünya-bootstrap aralığı" data-es="Intervalo bootstrap por mundo del 95%">95% world-bootstrap interval</th></tr></thead>
+        <tbody>
+          <tr><td>12</td><td>0.142500</td><td>0.134000–0.148462</td></tr>
+          <tr><td>14</td><td>0.149167</td><td>0.142500–0.156000</td></tr>
+          <tr><td>16</td><td>0.152500</td><td>0.145333–0.160000</td></tr>
+          <tr><td>20</td><td>0.154500</td><td>0.147000–0.163214</td></tr>
+          <tr><td>24</td><td>0.158333</td><td>0.148462–0.168214</td></tr>
+          <tr><td>32</td><td>0.162500</td><td>0.154167–0.172727</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="finding-grid top-gap">
+      <div class="card"><div class="big-number">0.1425</div><p class="muted" data-en="80/80 boundary at 12 responders" data-tr="12 ekipte 80/80 sınırı" data-es="Frontera 80/80 con 12 recursos">80/80 boundary at 12 responders</p></div>
+      <div class="card"><div class="big-number">0.1625</div><p class="muted" data-en="80/80 boundary at 32 responders" data-tr="32 ekipte 80/80 sınırı" data-es="Frontera 80/80 con 32 recursos">80/80 boundary at 32 responders</p></div>
+      <div class="card"><div class="big-number">102/102</div><p class="muted" data-en="Total-response confirmatory cells significant after Holm correction" data-tr="Holm düzeltmesi sonrası anlamlı toplam müdahale hücreleri" data-es="Celdas confirmatorias de respuesta total significativas tras Holm">Confirmatory cells significant after Holm correction</p></div>
+    </div>
+    <figure><img src="assets/research/boundary_vs_responders.png" alt="Reliability boundary versus responder availability"><figcaption data-en="Frozen v1.0.0 reliability-boundary estimates with world-bootstrap intervals." data-tr="Dünya-bootstrap aralıklarıyla dondurulmuş v1.0.0 güvenilirlik sınırı tahminleri." data-es="Estimaciones congeladas de la frontera de fiabilidad v1.0.0 con intervalos bootstrap por mundo.">Frozen reliability-boundary estimates.</figcaption></figure>
+  </section>
+
+  <section class="section wrap" id="reproducibility">
+    <p class="eyebrow" data-en="REPRODUCIBILITY" data-tr="TEKRAR ÜRETİLEBİLİRLİK" data-es="REPRODUCIBILIDAD">REPRODUCIBILITY</p>
+    <div class="two-col">
+      <div>
+        <h2 data-en="The evidence chain is preserved" data-tr="Kanıt zinciri korunur" data-es="La cadena de evidencia se conserva">The evidence chain is preserved</h2>
+        <p data-en="The final interpretation is anchored to GitHub Actions runs 31582171618 and 31585895864 on the same v0.7 code state, both using base seed 7070. Raw and derived tables, source workflow artifacts, figures, a frozen manifest and SHA-256 checksums are retained under results/final_v0.8/."
+           data-tr="Nihai yorum aynı v0.7 kod durumunda, 7070 temel tohumu ile çalışan 31582171618 ve 31585895864 GitHub Actions koşularına dayanır. Ham ve türetilmiş tablolar, workflow artifact'leri, şekiller, dondurulmuş manifest ve SHA-256 checksum'ları results/final_v0.8/ altında korunur."
+           data-es="La interpretación final está anclada a las ejecuciones de GitHub Actions 31582171618 y 31585895864 sobre el mismo estado de código v0.7 y semilla base 7070. Las tablas, artefactos, figuras, manifiesto congelado y checksums SHA-256 se conservan en results/final_v0.8/.">
+          The final evidence is traceable to two frozen GitHub Actions runs.
+        </p>
+      </div>
+      <div class="citation-box">
+        <strong data-en="Frozen software record" data-tr="Dondurulmuş yazılım kaydı" data-es="Registro de software congelado">Frozen software record</strong>
+        <code>v1.0.0</code>
+        <a href="https://doi.org/10.5281/zenodo.21903851">10.5281/zenodo.21903851</a>
+        <small data-en="Concept DOI for all versions" data-tr="Tüm sürümler için Concept DOI" data-es="Concept DOI para todas las versiones">Concept DOI for all versions</small>
+        <a href="https://doi.org/10.5281/zenodo.21903850">10.5281/zenodo.21903850</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="repository">
+    <p class="eyebrow" data-en="REPOSITORY MAP" data-tr="REPOSITORY HARİTASI" data-es="MAPA DEL REPOSITORIO">REPOSITORY MAP</p>
+    <div class="codepath"><code>app/</code><span data-en="Interactive Streamlit research interface" data-tr="Etkileşimli Streamlit araştırma arayüzü" data-es="Interfaz interactiva de investigación Streamlit">Interactive Streamlit research interface</span></div>
+    <div class="codepath"><code>src/turkiye_disaster_twin/</code><span data-en="Data, simulation and research software" data-tr="Veri, simülasyon ve araştırma yazılımı" data-es="Software de datos, simulación e investigación">Data, simulation and research software</span></div>
+    <div class="codepath"><code>scripts/</code><span data-en="Reproducible benchmark entry points" data-tr="Tekrar üretilebilir benchmark giriş noktaları" data-es="Puntos de entrada reproducibles para benchmarks">Reproducible benchmark entry points</span></div>
+    <div class="codepath"><code>tests/</code><span data-en="Automated regression and method tests" data-tr="Otomatik regresyon ve yöntem testleri" data-es="Pruebas automatizadas de regresión y método">Automated regression and method tests</span></div>
+    <div class="codepath"><code>results/</code><span data-en="Frozen research evidence and checksums" data-tr="Dondurulmuş araştırma kanıtı ve checksum'lar" data-es="Evidencia congelada y checksums">Frozen research evidence and checksums</span></div>
+    <div class="codepath"><code>docs/</code><span data-en="Public GitHub Pages presentation" data-tr="Açık GitHub Pages sunumu" data-es="Presentación pública en GitHub Pages">Public GitHub Pages presentation</span></div>
+    <div class="codepath"><code>.github/workflows/</code><span data-en="CI and research benchmark automation" data-tr="CI ve araştırma benchmark otomasyonu" data-es="Automatización de CI y benchmarks">CI and research benchmark automation</span></div>
+  </section>
+
+  <section class="section wrap" id="limitations">
+    <p class="eyebrow" data-en="LIMITATIONS AND RESPONSIBLE USE" data-tr="SINIRLILIKLAR VE SORUMLU KULLANIM" data-es="LIMITACIONES Y USO RESPONSABLE">LIMITATIONS AND RESPONSIBLE USE</p>
+    <h2 data-en="A research platform, not an operational warning system" data-tr="Operasyonel uyarı sistemi değil, araştırma platformu" data-es="Una plataforma de investigación, no un sistema operativo de alerta">A research platform, not an operational warning system</h2>
+    <p data-en="The v1.0.0 findings are a Beykoz pilot under a controlled synthetic disruption model. They are not validated estimates of İstanbul-wide or Türkiye-wide emergency performance. Operational deployment would require authoritative infrastructure and resource inventories, engineering fragility models, calibration against observed disasters, governance and security controls, and validation with responsible institutions."
+       data-tr="v1.0.0 bulguları kontrollü sentetik kesinti modeli altındaki Beykoz pilotuna aittir. İstanbul veya Türkiye geneline doğrulanmış acil müdahale performansı tahminleri değildir. Operasyonel kullanım; yetkili altyapı ve kaynak envanterlerini, mühendislik kırılganlık modellerini, gerçek afetlerle kalibrasyonu, yönetişim ve güvenlik kontrollerini ve sorumlu kurumlarla doğrulamayı gerektirir."
+       data-es="Los resultados de v1.0.0 corresponden a un piloto de Beykoz bajo un modelo sintético controlado. No constituyen estimaciones validadas del rendimiento de emergencia para todo Estambul o Türkiye. Un despliegue operativo requeriría inventarios oficiales, modelos de fragilidad de ingeniería, calibración con desastres observados, controles de gobernanza y seguridad y validación institucional.">
+      The results demonstrate a reproducible computational method rather than validated operational performance.
+    </p>
+  </section>
+
+  <section class="section wrap" id="citation">
+    <p class="eyebrow" data-en="CITATION" data-tr="ATIF" data-es="CITA">CITATION</p>
+    <div class="citation-box wide">
+      <strong>Kowsari, F. (2026). <em>Türkiye Disaster Intelligence Digital Twin</em> (v1.0.0) [Computer software]. Zenodo.</strong>
+      <a href="https://doi.org/10.5281/zenodo.21903851">https://doi.org/10.5281/zenodo.21903851</a>
+      <span data-en="For a project-level reference that should follow future versions, use the Concept DOI:"
+            data-tr="Gelecekteki sürümleri de takip edecek proje düzeyi atıf için Concept DOI kullanın:"
+            data-es="Para una referencia al proyecto que siga las versiones futuras, utilice el Concept DOI:">
+        For a project-level reference that should follow future versions, use the Concept DOI:
+      </span>
+      <a href="https://doi.org/10.5281/zenodo.21903850">https://doi.org/10.5281/zenodo.21903850</a>
+    </div>
+  </section>
+
+  <section class="section wrap author" id="author">
+    <img src="https://avatars.githubusercontent.com/u/105053743?v=4&s=512" alt="Faramarz Kowsari">
+    <div>
+      <p class="eyebrow" data-en="AUTHOR" data-tr="YAZAR" data-es="AUTOR">AUTHOR</p>
+      <h2>Faramarz Kowsari</h2>
+      <p class="lead" data-en="Author · Software Engineer · AI Researcher" data-tr="Yazar · Yazılım Mühendisi · Yapay Zekâ Araştırmacısı" data-es="Autor · Ingeniero de Software · Investigador en Inteligencia Artificial">Author · Software Engineer · AI Researcher</p>
+      <p data-en="Faramarz Kowsari is based in İstanbul and develops open research software, technical web systems and educational material, with work spanning applied AI, data-driven decision support, graph-based modeling and reproducible computational research."
+         data-tr="Faramarz Kowsari İstanbul'da yaşamaktadır; uygulamalı yapay zekâ, veriye dayalı karar desteği, graf tabanlı modelleme ve tekrar üretilebilir hesaplamalı araştırma alanlarında açık araştırma yazılımları, teknik web sistemleri ve eğitim materyalleri geliştirir."
+         data-es="Faramarz Kowsari reside en Estambul y desarrolla software abierto de investigación, sistemas web técnicos y material educativo, con trabajo en IA aplicada, apoyo a decisiones basado en datos, modelado con grafos e investigación computacional reproducible.">
+        Faramarz Kowsari is based in İstanbul and develops open research software and technical research systems.
+      </p>
+      <div class="profiles">
+        <a href="https://orcid.org/0000-0003-1692-0453">ORCID</a>
+        <a href="https://scholar.google.com/citations?user=G7tP5WMAAAAJ&hl=en">Google Scholar</a>
+        <a href="https://github.com/FaramarzKowsari">GitHub</a>
+        <a href="https://www.linkedin.com/in/faramarzkowsari">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <span>Türkiye Disaster Intelligence Digital Twin · v1.0.0 · Faramarz Kowsari</span>
+    <a href="https://doi.org/10.5281/zenodo.21903851">DOI 10.5281/zenodo.21903851</a>
+  </div>
+</footer>
+<script src="assets/site.js"></script>
+</body>
+</html>

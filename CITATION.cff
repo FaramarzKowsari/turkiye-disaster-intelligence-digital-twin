@@ -1,11 +1,21 @@
 cff-version: 1.2.0
-message: "If you use this software or its research results, please cite it using this metadata."
+message: "If you use this software or its research results, cite the frozen v1.0.0 release with DOI 10.5281/zenodo.21903851. Use the Concept DOI 10.5281/zenodo.21903850 when referring to the project across versions."
 title: "Türkiye Disaster Intelligence Digital Twin"
 type: software
 version: 1.0.0
 date-released: 2026-08-12
+doi: 10.5281/zenodo.21903851
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21903851
+    description: "Version DOI for the frozen v1.0.0 research release"
+  - type: doi
+    value: 10.5281/zenodo.21903850
+    description: "Concept DOI representing all versions of the project"
 license: MIT
+commit: ad6d508617ade5f86c9f602c070d3336b612d881
 repository-code: "https://github.com/FaramarzKowsari/turkiye-disaster-intelligence-digital-twin"
+repository-artifact: "https://github.com/FaramarzKowsari/turkiye-disaster-intelligence-digital-twin/releases/tag/v1.0.0"
 url: "https://faramarzkowsari.github.io/turkiye-disaster-intelligence-digital-twin/"
 authors:
   - family-names: "Kowsari"
@@ -19,7 +29,11 @@ keywords:
   - Monte Carlo simulation
   - emergency resource allocation
   - reproducible research
+  - geospatial analysis
+  - network reliability
 abstract: >-
   A reproducible graph-based research platform for studying emergency-response accessibility,
   resource allocation and reliability boundaries under synthetic post-earthquake road disruption
-  in Türkiye.
+  in Türkiye. The v1.0.0 release integrates AFAD and OpenStreetMap data access, coupled stochastic
+  disruption experiments, graph-based assignment baselines, phase-transition analysis and
+  world-cluster bootstrap inference.

@@ -1,5 +1,13 @@
 # Reproducibility — v1.0
 
+
+## Persistent identifiers
+
+The frozen software release is archived at Zenodo with **version DOI
+[10.5281/zenodo.21903851](https://doi.org/10.5281/zenodo.21903851)**. The project-level
+**Concept DOI [10.5281/zenodo.21903850](https://doi.org/10.5281/zenodo.21903850)** represents all
+versions of the research software record.
+
 ## Frozen evidence chain
 
 The final confirmatory interpretation is anchored to two GitHub Actions runs:

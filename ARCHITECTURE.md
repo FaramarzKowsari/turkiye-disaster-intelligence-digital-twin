@@ -67,3 +67,11 @@ Assignment methods over opaque learned policies, making the evidence chain easie
 - `.github/workflows/`: CI and reproducible benchmark execution
 - `results/`: frozen evidence
 - `docs/`: public research presentation
+
+## Persistent research record
+
+The architecture documented here corresponds to the frozen **v1.0.0** research release.
+
+- Version DOI: https://doi.org/10.5281/zenodo.21903851
+- Concept DOI: https://doi.org/10.5281/zenodo.21903850
+- Full project documentation: https://faramarzkowsari.github.io/turkiye-disaster-intelligence-digital-twin/project.html

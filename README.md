@@ -13,6 +13,9 @@
   <a href="https://github.com/FaramarzKowsari/turkiye-disaster-intelligence-digital-twin/actions/workflows/ci.yml">
     <img alt="CI" src="https://github.com/FaramarzKowsari/turkiye-disaster-intelligence-digital-twin/actions/workflows/ci.yml/badge.svg">
   </a>
+  <a href="https://doi.org/10.5281/zenodo.21903850">
+    <img alt="DOI" src="https://zenodo.org/badge/1330196332.svg">
+  </a>
   <img alt="Version 1.0.0" src="https://img.shields.io/badge/version-1.0.0-2f6f9f.svg">
   <img alt="Python 3.11+" src="https://img.shields.io/badge/Python-3.11%2B-3670A0.svg">
   <img alt="License MIT" src="https://img.shields.io/badge/License-MIT-168D73.svg">
@@ -24,8 +27,11 @@
   <a href="#english">English</a> ·
   <a href="#türkçe">Türkçe</a> ·
   <a href="#español-españa">Español (España)</a> ·
-  <a href="https://faramarzkowsari.github.io/turkiye-disaster-intelligence-digital-twin/">Project Website</a> ·
-  <a href="https://faramarzkowsari.github.io/turkiye-disaster-intelligence-digital-twin/research-findings.html">Research Findings</a>
+  <a href="ABOUT.md">About</a> ·
+  <a href="https://faramarzkowsari.github.io/turkiye-disaster-intelligence-digital-twin/">Project Index</a> ·
+  <a href="https://faramarzkowsari.github.io/turkiye-disaster-intelligence-digital-twin/project.html">Full Project</a> ·
+  <a href="https://faramarzkowsari.github.io/turkiye-disaster-intelligence-digital-twin/research-findings.html">Research Findings</a> ·
+  <a href="https://doi.org/10.5281/zenodo.21903851">Zenodo v1.0.0</a>
 </p>
 
 > **Research and safety boundary:** this repository is a research prototype and reproducibility
@@ -48,6 +54,15 @@
 The project treats a road network as a stochastic emergency-response graph. It combines public
 AFAD earthquake catalogue access, OpenStreetMap road and facility data, reproducible synthetic
 road-disruption scenarios, paired Monte Carlo experiments and transparent assignment algorithms.
+
+## Persistent identifiers
+
+- **Version DOI (v1.0.0):** [10.5281/zenodo.21903851](https://doi.org/10.5281/zenodo.21903851)
+- **Concept DOI (all versions):** [10.5281/zenodo.21903850](https://doi.org/10.5281/zenodo.21903850)
+- **GitHub release:** [v1.0.0](https://github.com/FaramarzKowsari/turkiye-disaster-intelligence-digital-twin/releases/tag/v1.0.0)
+
+Use the **version DOI** when citing the frozen v1.0.0 research release. Use the **Concept DOI** when
+referencing the project as a continuing research software record across versions.
 
 The core scientific contribution of the v1.0 research release is a **coupled reliability-boundary
 experiment**. Instead of comparing unrelated random scenarios at each disruption level, the same
@@ -199,6 +214,15 @@ verilerine erişim, OpenStreetMap yol ve tesis verileri, tekrar üretilebilir se
 senaryoları, eşleştirilmiş Monte Carlo deneyleri ve şeffaf atama algoritmaları aynı araştırma
 platformunda birleştirilmiştir.
 
+## Kalıcı tanımlayıcılar
+
+- **Sürüm DOI'si (v1.0.0):** [10.5281/zenodo.21903851](https://doi.org/10.5281/zenodo.21903851)
+- **Concept DOI (tüm sürümler):** [10.5281/zenodo.21903850](https://doi.org/10.5281/zenodo.21903850)
+- **GitHub sürümü:** [v1.0.0](https://github.com/FaramarzKowsari/turkiye-disaster-intelligence-digital-twin/releases/tag/v1.0.0)
+
+Dondurulmuş v1.0.0 araştırma sürümüne atıf yaparken **sürüm DOI'sini**; projenin tüm sürümlerini
+kapsayan sürekli araştırma yazılımı kaydına atıf yaparken **Concept DOI'yi** kullanın.
+
 v1.0 sürümünün temel bilimsel bileşeni **eşleştirilmiş güvenilirlik sınırı deneyidir**. Her kesinti
 şiddetinde birbirinden bağımsız rastgele dünyalar üretmek yerine aynı stokastik dünya kademeli
 olarak zorlanır. Böylece ortak rastgele sayılar korunur, yol kesintileri iç içe büyür ve sistemin
@@ -278,6 +302,15 @@ El proyecto modela la red viaria como un grafo estocástico de respuesta a emerg
 acceso al catálogo público de AFAD, carreteras e instalaciones de OpenStreetMap, escenarios
 sintéticos reproducibles de interrupción, experimentos Monte Carlo emparejados y algoritmos
 transparentes de asignación.
+
+## Identificadores persistentes
+
+- **DOI de la versión (v1.0.0):** [10.5281/zenodo.21903851](https://doi.org/10.5281/zenodo.21903851)
+- **Concept DOI (todas las versiones):** [10.5281/zenodo.21903850](https://doi.org/10.5281/zenodo.21903850)
+- **Versión de GitHub:** [v1.0.0](https://github.com/FaramarzKowsari/turkiye-disaster-intelligence-digital-twin/releases/tag/v1.0.0)
+
+Utilice el **DOI de la versión** para citar la edición de investigación congelada v1.0.0 y el
+**Concept DOI** para referirse al proyecto como registro continuo de software de investigación.
 
 La principal aportación experimental de v1.0 es un **estudio acoplado de frontera de fiabilidad**.
 El mismo mundo estocástico se somete progresivamente a niveles crecientes de interrupción, en lugar
@@ -381,7 +414,15 @@ contenidos educativos.
 
 ## Citation
 
-Please use [`CITATION.cff`](CITATION.cff) for machine-readable citation metadata.
+Please use [`CITATION.cff`](CITATION.cff) for machine-readable citation metadata. For the frozen
+v1.0.0 release, cite the version DOI:
+
+> Kowsari, F. (2026). *Türkiye Disaster Intelligence Digital Twin* (v1.0.0) [Computer software].
+> Zenodo. https://doi.org/10.5281/zenodo.21903851
+
+**Version DOI:** [10.5281/zenodo.21903851](https://doi.org/10.5281/zenodo.21903851)  
+**Concept DOI:** [10.5281/zenodo.21903850](https://doi.org/10.5281/zenodo.21903850)  
+**Detailed project page:** [Project architecture, methodology and evidence](https://faramarzkowsari.github.io/turkiye-disaster-intelligence-digital-twin/project.html)
 
 ## License
 

@@ -2,6 +2,9 @@
 
 ## 1.0.0 — 2026-08-12
 
+- Archived v1.0.0 on Zenodo: DOI `10.5281/zenodo.21903851`.
+- Registered Concept DOI `10.5281/zenodo.21903850` for all project versions.
+- Added DOI metadata, a comprehensive project documentation page and expanded About material.
 - Finalized research-release documentation and metadata.
 - Synchronized package version to 1.0.0.
 - Published frozen v0.8 confirmatory findings in README and GitHub Pages.
