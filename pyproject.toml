@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "turkiye-disaster-intelligence-digital-twin"
-version = "0.8.0"
-description = "Research-grade digital twin testbed for earthquake emergency response in Türkiye."
+version = "1.0.0"
+description = "Reproducible graph-based disaster-response research platform for Türkiye."
 readme = "README.md"
 requires-python = ">=3.11"
 authors = [{name = "Faramarz Kowsari"}]

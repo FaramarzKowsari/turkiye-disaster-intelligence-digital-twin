@@ -3,148 +3,119 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Research Findings | Türkiye Disaster Intelligence Digital Twin</title>
-  <meta name="description" content="Confirmatory reliability-boundary findings for the Türkiye Disaster Intelligence Digital Twin research prototype.">
+  <title>Research Findings | Türkiye Disaster Intelligence Digital Twin v1.0</title>
+  <meta name="description" content="Frozen confirmatory reliability-boundary findings for the Türkiye Disaster Intelligence Digital Twin v1.0 research release.">
   <meta name="author" content="Faramarz Kowsari">
-  <style>
-    :root { color-scheme: light dark; }
-    body { margin:0; font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.6; }
-    .wrap { max-width:1050px; margin:auto; padding:24px; }
-    header { border-bottom:1px solid rgba(127,127,127,.3); }
-    nav { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; }
-    .brand { font-weight:700; text-decoration:none; color:inherit; }
-    button { padding:8px 12px; cursor:pointer; }
-    .hero { padding-top:56px; padding-bottom:32px; }
-    .eyebrow { font-size:.78rem; letter-spacing:.12em; font-weight:700; opacity:.75; }
-    h1 { font-size:clamp(2rem,5vw,4rem); line-height:1.05; max-width:900px; }
-    h2 { margin-top:44px; }
-    .lead { font-size:1.15rem; max-width:800px; }
-    .callout { padding:18px; border:1px solid rgba(127,127,127,.35); border-radius:14px; margin:24px 0; }
-    table { width:100%; border-collapse:collapse; margin:20px 0 32px; }
-    th,td { text-align:left; padding:10px; border-bottom:1px solid rgba(127,127,127,.3); }
-    figure { margin:32px 0; }
-    figure img { width:100%; height:auto; border-radius:14px; border:1px solid rgba(127,127,127,.25); }
-    figcaption { opacity:.75; font-size:.9rem; margin-top:8px; }
-    .author { display:grid; grid-template-columns:120px 1fr; gap:24px; align-items:start; margin-top:56px; }
-    .author img { width:110px; height:110px; border-radius:50%; }
-    a { color:inherit; }
-    footer { margin-top:60px; border-top:1px solid rgba(127,127,127,.3); }
-    @media(max-width:620px) { .author { grid-template-columns:1fr; } }
-  </style>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <nav>
-      <a class="brand" href="./">Türkiye Disaster Intelligence Digital Twin</a>
-      <div>
-        <button class="lang" data-lang="en">English</button>
-        <button class="lang" data-lang="tr">Türkçe</button>
-        <button class="lang" data-lang="es">Español</button>
-      </div>
-    </nav>
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="./">← Türkiye Disaster Intelligence Digital Twin</a>
+    <div class="lang-switch">
+      <button class="lang active" data-lang="en">English</button>
+      <button class="lang" data-lang="tr">Türkçe</button>
+      <button class="lang" data-lang="es">Español</button>
+    </div>
   </div>
 </header>
 
 <main class="wrap">
-  <section class="hero">
-    <p class="eyebrow"
-       data-en="CONFIRMATORY RESEARCH FINDINGS · v0.8"
-       data-tr="DOĞRULAYICI ARAŞTIRMA BULGULARI · v0.8"
-       data-es="RESULTADOS CONFIRMATORIOS · v0.8">CONFIRMATORY RESEARCH FINDINGS · v0.8</p>
-    <h1
-      data-en="Where resource optimisation stops being enough"
-      data-tr="Kaynak optimizasyonunun tek başına yetersiz kaldığı sınır"
-      data-es="Dónde la optimización de recursos deja de ser suficiente">
-      Where resource optimisation stops being enough
-    </h1>
-    <p class="lead"
-       data-en="A coupled stochastic experiment on the Beykoz road network estimates how responder availability shifts a synthetic service-reliability boundary."
-       data-tr="Beykoz yol ağı üzerindeki eşleştirilmiş stokastik deney, müdahale ekibi sayısının sentetik hizmet güvenilirliği sınırını nasıl değiştirdiğini tahmin eder."
-       data-es="Un experimento estocástico acoplado sobre la red viaria de Beykoz estima cómo la disponibilidad de recursos desplaza una frontera sintética de fiabilidad del servicio.">
-      A coupled stochastic experiment on the Beykoz road network estimates how responder availability shifts a synthetic service-reliability boundary.
+  <section class="hero" style="grid-template-columns:1fr">
+    <div>
+      <p class="eyebrow"
+         data-en="FROZEN CONFIRMATORY FINDINGS"
+         data-tr="DONDURULMUŞ DOĞRULAYICI BULGULAR"
+         data-es="RESULTADOS CONFIRMATORIOS CONGELADOS">FROZEN CONFIRMATORY FINDINGS</p>
+      <h1 data-en="The 80/80 service-reliability boundary"
+          data-tr="80/80 hizmet güvenilirliği sınırı"
+          data-es="La frontera 80/80 de fiabilidad del servicio">
+        The 80/80 service-reliability boundary
+      </h1>
+      <p class="lead"
+         data-en="Final v1.0 evidence from the Beykoz pilot under a synthetic, coupled stochastic road-disruption model."
+         data-tr="Sentetik ve eşleştirilmiş stokastik yol kesintisi modeli altında Beykoz pilotundan elde edilen nihai v1.0 kanıtı."
+         data-es="Evidencia final v1.0 del piloto de Beykoz bajo un modelo sintético y acoplado de interrupción viaria.">
+        Final v1.0 evidence from the Beykoz pilot.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="callout"
+      data-en="Primary estimand: the synthetic severity at which P(reachability ≥ 80%) crosses 80%. This is not earthquake magnitude or an operational safety threshold."
+      data-tr="Birincil ölçüt: P(erişilebilirlik ≥ %80) değerinin %80'i geçtiği sentetik şiddet. Bu deprem büyüklüğü veya operasyonel güvenlik eşiği değildir."
+      data-es="Estimando principal: severidad sintética en la que P(accesibilidad ≥ 80%) cruza el 80%. No es magnitud sísmica ni un umbral operativo de seguridad.">
+      Primary estimand: the synthetic severity at which P(reachability ≥ 80%) crosses 80%.
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 data-en="Final Global Minimum-Cost boundary estimates"
+        data-tr="Nihai Global Minimum-Cost sınır tahminleri"
+        data-es="Estimaciones finales de frontera para Global Minimum-Cost">
+      Final Global Minimum-Cost boundary estimates
+    </h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th data-en="Responders" data-tr="Müdahale ekibi" data-es="Recursos">Responders</th>
+            <th data-en="Boundary" data-tr="Sınır" data-es="Frontera">Boundary</th>
+            <th data-en="95% world-bootstrap interval" data-tr="%95 dünya-bootstrap aralığı" data-es="Intervalo bootstrap por mundo del 95%">95% world-bootstrap interval</th>
+          </tr>
+        </thead>
+        <tbody><tr><td>12</td><td>0.142500</td><td>0.134000–0.148462</td></tr>
+<tr><td>14</td><td>0.149167</td><td>0.142500–0.156000</td></tr>
+<tr><td>16</td><td>0.152500</td><td>0.145333–0.160000</td></tr>
+<tr><td>20</td><td>0.154500</td><td>0.147000–0.163214</td></tr>
+<tr><td>24</td><td>0.158333</td><td>0.148462–0.168214</td></tr>
+<tr><td>32</td><td>0.162500</td><td>0.154167–0.172727</td></tr></tbody>
+      </table>
+    </div>
+
+    <figure>
+      <img src="assets/research/boundary_vs_responders.png" alt="Reliability boundary by responder count">
+      <figcaption data-en="More responders move the boundary upward, with diminishing marginal gains."
+                  data-tr="Daha fazla müdahale ekibi sınırı yükseltir; marjinal kazanç giderek azalır."
+                  data-es="Más recursos desplazan la frontera hacia arriba, con ganancias marginales decrecientes.">
+        More responders move the boundary upward, with diminishing marginal gains.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/research/service_probability_curves.png" alt="Confirmatory service probability curves">
+      <figcaption data-en="Extended service-probability curves close the high-resource upper boundary."
+                  data-tr="Genişletilmiş hizmet olasılığı eğrileri yüksek kaynak düzeyindeki üst sınırı kapatır."
+                  data-es="Las curvas ampliadas de probabilidad cierran el límite superior para niveles altos de recursos.">
+        Extended service-probability curves close the high-resource upper boundary.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/research/marginal_boundary_gain.png" alt="Marginal reliability-boundary gain">
+      <figcaption data-en="Boundary gain per additional responder declines across the tested range."
+                  data-tr="Test edilen aralıkta ek müdahale ekibi başına sınır kazancı azalır."
+                  data-es="La ganancia de frontera por recurso adicional disminuye en el intervalo probado.">
+        Boundary gain per additional responder declines across the tested range.
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="section">
+    <h2 data-en="What survives statistical correction?"
+        data-tr="İstatistiksel düzeltmeden sonra ne kalıyor?"
+        data-es="¿Qué permanece tras la corrección estadística?">
+      What survives statistical correction?
+    </h2>
+    <p data-en="For total response time, Global Minimum-Cost Assignment beat sequential Greedy in all 66 primary fine-grid cells and all 36 extension cells after Holm correction at α = 0.05."
+       data-tr="Toplam müdahale süresinde Global Minimum-Cost Assignment, α = 0.05 düzeyinde Holm düzeltmesinden sonra ana ince ızgaradaki 66 hücrenin ve genişletmedeki 36 hücrenin tamamında sıralı Greedy yönteminden daha iyi sonuç verdi."
+       data-es="Para el tiempo total de respuesta, Global Minimum-Cost Assignment superó al Greedy secuencial en las 66 celdas de la cuadrícula principal y en las 36 de la extensión tras la corrección de Holm con α = 0,05.">
+      For total response time, Global Minimum-Cost Assignment beat sequential Greedy in every confirmatory grid cell after Holm correction.
     </p>
   </section>
 
-  <div class="callout"
-       data-en="Primary estimand: the synthetic disruption severity at which P(reachability ≥ 80%) crosses 80%. This is a model-derived research quantity, not earthquake magnitude or an operational safety threshold."
-       data-tr="Birincil ölçüt: P(erişilebilirlik ≥ %80) değerinin %80 sınırını geçtiği sentetik kesinti şiddeti. Bu, modelden türetilmiş bir araştırma ölçütüdür; deprem büyüklüğü veya operasyonel güvenlik eşiği değildir."
-       data-es="Estimando principal: severidad sintética de interrupción en la que P(accesibilidad ≥ 80%) cruza el 80%. Es una magnitud derivada del modelo, no una magnitud sísmica ni un umbral operativo de seguridad.">
-    Primary estimand: the synthetic disruption severity at which P(reachability ≥ 80%) crosses 80%.
-  </div>
-
-  <h2 data-en="Frozen boundary estimates" data-tr="Dondurulmuş sınır tahminleri" data-es="Estimaciones finales de la frontera">Frozen boundary estimates</h2>
-  <table>
-    <thead>
-      <tr>
-        <th data-en="Responders" data-tr="Müdahale ekibi" data-es="Recursos">Responders</th>
-        <th data-en="Boundary estimate" data-tr="Sınır tahmini" data-es="Frontera estimada">Boundary estimate</th>
-        <th data-en="95% bootstrap interval" data-tr="%95 bootstrap aralığı" data-es="Intervalo bootstrap 95%">95% bootstrap interval</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>12</td><td>0.142500</td>
-    <td>0.134000–0.148462</td></tr>
-<tr><td>14</td><td>0.149167</td>
-    <td>0.142500–0.156000</td></tr>
-<tr><td>16</td><td>0.152500</td>
-    <td>0.145333–0.160000</td></tr>
-<tr><td>20</td><td>0.154500</td>
-    <td>0.147000–0.163214</td></tr>
-<tr><td>24</td><td>0.158333</td>
-    <td>0.148462–0.168214</td></tr>
-<tr><td>32</td><td>0.162500</td>
-    <td>0.154167–0.172727</td></tr>
-    </tbody>
-  </table>
-
-  <figure>
-    <img src="assets/research/boundary_vs_responders.png" alt="Reliability boundary versus responder count">
-    <figcaption
-      data-en="The reliability boundary shifts upward with more responders; bootstrap intervals retain the stochastic-world uncertainty."
-      data-tr="Müdahale ekibi sayısı arttıkça güvenilirlik sınırı yükselir; bootstrap aralıkları stokastik dünya belirsizliğini korur."
-      data-es="La frontera de fiabilidad aumenta con más recursos; los intervalos bootstrap conservan la incertidumbre entre mundos estocásticos.">
-      The reliability boundary shifts upward with more responders.
-    </figcaption>
-  </figure>
-
-  <figure>
-    <img src="assets/research/service_probability_curves.png" alt="Service probability curves">
-    <figcaption
-      data-en="Extended confirmatory curves for 20, 24 and 32 responders close the upper edge of the boundary grid."
-      data-tr="20, 24 ve 32 ekip için genişletilmiş doğrulayıcı eğriler sınır ızgarasının üst kenarını kapatır."
-      data-es="Las curvas confirmatorias ampliadas para 20, 24 y 32 recursos cierran el extremo superior de la cuadrícula.">
-      Extended confirmatory service-probability curves.
-    </figcaption>
-  </figure>
-
-  <figure>
-    <img src="assets/research/marginal_boundary_gain.png" alt="Marginal boundary gain">
-    <figcaption
-      data-en="Additional resources continue to help, but the boundary gain per added responder shows diminishing returns."
-      data-tr="Ek kaynaklar fayda sağlamaya devam eder; ancak ekip başına sınır kazancı giderek azalır."
-      data-es="Los recursos adicionales siguen ayudando, pero la ganancia de frontera por recurso añadido presenta rendimientos decrecientes.">
-      Diminishing returns in boundary gain per added responder.
-    </figcaption>
-  </figure>
-
-  <h2 data-en="What the result means" data-tr="Sonuç ne anlama geliyor?" data-es="Qué significa el resultado">What the result means</h2>
-  <p
-    data-en="Global Minimum-Cost Assignment systematically reduces dispatch-time cost among reachable resources, but it cannot manufacture connectivity when the disrupted graph no longer contains a route. The experiment therefore separates an optimisation-limited regime from a connectivity-limited regime."
-    data-tr="Global Minimum-Cost Assignment, erişilebilir kaynaklar arasındaki müdahale süresi maliyetini sistematik biçimde azaltır; ancak kesintili grafta yol kalmadığında bağlantı üretemez. Deney böylece optimizasyonla sınırlı rejim ile bağlantılılıkla sınırlı rejimi birbirinden ayırır."
-    data-es="La Asignación Global de Coste Mínimo reduce sistemáticamente el coste temporal entre recursos alcanzables, pero no puede crear conectividad cuando el grafo interrumpido ya no contiene una ruta. El experimento separa así un régimen limitado por la optimización de otro limitado por la conectividad.">
-    Global Minimum-Cost Assignment systematically reduces dispatch-time cost among reachable resources, but it cannot manufacture connectivity when the disrupted graph no longer contains a route.
-  </p>
-
-  <h2 data-en="Reproducibility" data-tr="Tekrar üretilebilirlik" data-es="Reproducibilidad">Reproducibility</h2>
-  <p
-    data-en="The frozen v0.8 result is derived from two GitHub Actions confirmatory runs using the same coupled stochastic-world design and base seed 7070. Source artifacts, checksums and final tables are preserved in the repository results package."
-    data-tr="Dondurulmuş v0.8 sonucu, aynı eşleştirilmiş stokastik dünya tasarımı ve 7070 temel tohumu ile çalışan iki GitHub Actions doğrulama koşusundan türetilmiştir. Kaynak artifact'ler, checksum'lar ve son tablolar repository sonuç paketinde korunur."
-    data-es="El resultado congelado v0.8 procede de dos ejecuciones confirmatorias de GitHub Actions con el mismo diseño de mundos estocásticos acoplados y semilla base 7070. Los artefactos fuente, checksums y tablas finales se conservan en el repositorio.">
-    The frozen v0.8 result is derived from two GitHub Actions confirmatory runs.
-  </p>
-
-  <section class="author">
+  <section class="section author">
     <img src="https://avatars.githubusercontent.com/u/105053743?v=4&s=512" alt="Faramarz Kowsari">
     <div>
       <p class="eyebrow" data-en="AUTHOR" data-tr="YAZAR" data-es="AUTOR">AUTHOR</p>
@@ -152,39 +123,18 @@
       <p data-en="Author · Software Engineer · AI Researcher"
          data-tr="Yazar · Yazılım Mühendisi · Yapay Zekâ Araştırmacısı"
          data-es="Autor · Ingeniero de Software · Investigador en Inteligencia Artificial">
-         Author · Software Engineer · AI Researcher
+        Author · Software Engineer · AI Researcher
       </p>
-      <p>
-        <a href="https://orcid.org/0000-0003-1692-0453">ORCID</a> ·
-        <a href="https://github.com/FaramarzKowsari">GitHub</a> ·
+      <div class="profiles">
+        <a href="https://orcid.org/0000-0003-1692-0453">ORCID</a>
+        <a href="https://github.com/FaramarzKowsari">GitHub</a>
         <a href="https://www.linkedin.com/in/faramarzkowsari">LinkedIn</a>
-      </p>
+      </div>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="wrap">Türkiye Disaster Intelligence Digital Twin · Faramarz Kowsari</div>
-</footer>
-
-<script>
-const buttons = document.querySelectorAll(".lang");
-const translatable = document.querySelectorAll("[data-en]");
-function applyLanguage(lang) {
-  translatable.forEach((node) => {
-    const value = node.dataset[lang];
-    if (value) node.textContent = value;
-  });
-  const htmlLang = lang === "es" ? "es-ES" : lang;
-  document.documentElement.lang = htmlLang;
-  localStorage.setItem("disasterTwinLanguage", lang);
-}
-buttons.forEach((button) => {
-  button.addEventListener("click", () => applyLanguage(button.dataset.lang));
-});
-const saved = localStorage.getItem("disasterTwinLanguage");
-const browser = navigator.language.toLowerCase();
-applyLanguage(saved || (browser.startsWith("tr") ? "tr" : browser.startsWith("es") ? "es" : "en"));
-</script>
+<footer><div class="wrap">Frozen v1.0 research findings · Faramarz Kowsari</div></footer>
+<script src="assets/site.js"></script>
 </body>
 </html>
