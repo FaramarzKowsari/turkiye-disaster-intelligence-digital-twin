@@ -1,3 +1,16 @@
+const actionBar = document.querySelector(".hero .actions");
+if (actionBar && !document.querySelector("[data-research-findings-link]")) {
+  const findings = document.createElement("a");
+  findings.className = "button";
+  findings.href = "research-findings.html";
+  findings.dataset.researchFindingsLink = "true";
+  findings.dataset.en = "Research findings";
+  findings.dataset.tr = "Araştırma bulguları";
+  findings.dataset.es = "Resultados de investigación";
+  findings.textContent = "Research findings";
+  actionBar.appendChild(findings);
+}
+
 const buttons = document.querySelectorAll(".lang");
 const translatable = document.querySelectorAll("[data-en]");
 
@@ -22,5 +35,12 @@ buttons.forEach((button) => {
 
 const saved = localStorage.getItem("disasterTwinLanguage");
 const browser = navigator.language.toLowerCase();
-const initial = saved || (browser.startsWith("tr") ? "tr" : browser.startsWith("es") ? "es" : "en");
+const initial =
+  saved ||
+  (browser.startsWith("tr")
+    ? "tr"
+    : browser.startsWith("es")
+      ? "es"
+      : "en");
+
 applyLanguage(initial);

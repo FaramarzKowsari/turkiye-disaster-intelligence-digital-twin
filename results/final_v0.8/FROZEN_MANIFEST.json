@@ -1,0 +1,71 @@
+{
+  "author": "Faramarz Kowsari",
+  "final_global_boundaries": [
+    {
+      "bootstrap_ci_high": 0.1484615384615384,
+      "bootstrap_ci_low": 0.134,
+      "boundary_point_estimate": 0.1425,
+      "responder_count": 12
+    },
+    {
+      "bootstrap_ci_high": 0.156,
+      "bootstrap_ci_low": 0.1425,
+      "boundary_point_estimate": 0.1491666666666666,
+      "responder_count": 14
+    },
+    {
+      "bootstrap_ci_high": 0.16,
+      "bootstrap_ci_low": 0.1453333333333333,
+      "boundary_point_estimate": 0.1525,
+      "responder_count": 16
+    },
+    {
+      "bootstrap_ci_high": 0.1632142857142857,
+      "bootstrap_ci_low": 0.147,
+      "boundary_point_estimate": 0.1545,
+      "responder_count": 20
+    },
+    {
+      "bootstrap_ci_high": 0.1682142857142857,
+      "bootstrap_ci_low": 0.1484615384615384,
+      "boundary_point_estimate": 0.1583333333333333,
+      "responder_count": 24
+    },
+    {
+      "bootstrap_ci_high": 0.1727272727272727,
+      "bootstrap_ci_low": 0.1541666666666666,
+      "boundary_point_estimate": 0.1625,
+      "responder_count": 32
+    }
+  ],
+  "notes": [
+    "Severity is a synthetic disruption-control parameter, not earthquake magnitude.",
+    "The 80/80 boundary is a model-derived service-reliability threshold, not an operational safety limit.",
+    "Road failure states are coupled monotonically across severity within each stochastic world."
+  ],
+  "pilot_area": "Beykoz, İstanbul, Türkiye",
+  "primary_algorithm": "global_min_cost",
+  "primary_estimand": "synthetic severity at which P(reachability >= 80%) crosses 80%",
+  "project": "Türkiye Disaster Intelligence Digital Twin",
+  "schema_version": "scientific-results-v0.8",
+  "source_internal_checksum_entries": 38,
+  "source_internal_checksums_verified": true,
+  "source_runs": [
+    {
+      "artifact_id": 9136667673,
+      "artifact_name": "disaster-twin-confirmatory-boundary-31582171618-attempt-1",
+      "artifact_sha256": "0517161be1fb49657202df79b9ec7b7b9c0d41ee6bfbc553d6692cf52f195659",
+      "commit": "8078af69eff047d7da71beac3b5b3b125a121d1a",
+      "role": "primary fine-grid confirmatory run",
+      "run_id": 31582171618
+    },
+    {
+      "artifact_id": 9138183927,
+      "artifact_name": "disaster-twin-confirmatory-boundary-31585895864-attempt-1",
+      "artifact_sha256": "7a0c9b9e87576c12a19c233e226d629c1bb096baaa87098d081c29984e418caf",
+      "commit": "8078af69eff047d7da71beac3b5b3b125a121d1a",
+      "role": "upper-bound extension for 20/24/32 responders",
+      "run_id": 31585895864
+    }
+  ]
+}
