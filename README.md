@@ -9,12 +9,24 @@
   <strong>Reproducible graph-based disaster-response research platform for Türkiye</strong>
 </p>
 
+
+<!-- PROJECT_SOCIAL_PREVIEW -->
+<p align="center">
+  <a href="https://faramarzkowsari.github.io/turkiye-disaster-intelligence-digital-twin/">
+    <img
+      src="docs/assets/social-preview.jpg"
+      alt="Türkiye Disaster Intelligence Digital Twin — Faramarz Kowsari"
+      width="100%"
+    >
+  </a>
+</p>
+
 <p align="center">
   <a href="https://github.com/FaramarzKowsari/turkiye-disaster-intelligence-digital-twin/actions/workflows/ci.yml">
     <img alt="CI" src="https://github.com/FaramarzKowsari/turkiye-disaster-intelligence-digital-twin/actions/workflows/ci.yml/badge.svg">
   </a>
   <a href="https://doi.org/10.5281/zenodo.21903850">
-    <img alt="DOI" src="https://zenodo.org/badge/1330196332.svg">
+    <img alt="DOI" src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21903850-blue.svg">
   </a>
   <img alt="Version 1.0.0" src="https://img.shields.io/badge/version-1.0.0-2f6f9f.svg">
   <img alt="Python 3.11+" src="https://img.shields.io/badge/Python-3.11%2B-3670A0.svg">
