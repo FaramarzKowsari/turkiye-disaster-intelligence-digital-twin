@@ -8,10 +8,6 @@ The frozen software release is archived at Zenodo with **version DOI
 **Concept DOI [10.5281/zenodo.21903850](https://doi.org/10.5281/zenodo.21903850)** represents all
 versions of the research software record.
 
-The completed methodology and provenance are also archived in an **accepted retrospective
-Open-Ended OSF Registration**, DOI **[10.17605/OSF.IO/ZTJXK](https://doi.org/10.17605/OSF.IO/ZTJXK)**. This registration formalizes
-the already completed computational research cycle and is not a preregistration.
-
 ## Frozen evidence chain
 
 The final confirmatory interpretation is anchored to two GitHub Actions runs:

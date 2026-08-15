@@ -10,18 +10,9 @@ The platform combines public AFAD catalogue access, OpenStreetMap road and emerg
 
 - **Version DOI — v1.0.0:** https://doi.org/10.5281/zenodo.21903851
 - **Concept DOI — all versions:** https://doi.org/10.5281/zenodo.21903850
-- **Accepted OSF Registration DOI:** https://doi.org/10.17605/OSF.IO/ZTJXK
 - **GitHub release:** https://github.com/FaramarzKowsari/turkiye-disaster-intelligence-digital-twin/releases/tag/v1.0.0
 - **Project website:** https://faramarzkowsari.github.io/turkiye-disaster-intelligence-digital-twin/
 - **Detailed project page:** https://faramarzkowsari.github.io/turkiye-disaster-intelligence-digital-twin/project.html
-
-### Open Science registration
-
-The completed research design, computational methodology, estimands, inferential procedures and provenance are preserved in an **accepted retrospective Open-Ended OSF Registration**. It documents an already completed computational investigation and must not be interpreted as a preregistration.
-
-- **Registration DOI:** https://doi.org/10.17605/OSF.IO/ZTJXK
-- **OSF record:** https://osf.io/ztjxk
-- **Associated OSF project:** https://osf.io/2r4cv
 
 ### Current scientific release
 
@@ -39,7 +30,6 @@ Platform; AFAD açık katalog erişimini, OpenStreetMap yol ve acil tesis verile
 
 - **v1.0.0 DOI:** https://doi.org/10.5281/zenodo.21903851
 - **Tüm sürümler için Concept DOI:** https://doi.org/10.5281/zenodo.21903850
-- **Kabul edilmiş OSF Registration DOI:** https://doi.org/10.17605/OSF.IO/ZTJXK
 
 Buradaki `severity` deprem büyüklüğü değil, sentetik bir ağ kesintisi kontrol parametresidir.
 
@@ -53,7 +43,6 @@ La plataforma integra datos públicos de AFAD y OpenStreetMap, fallos viarios si
 
 - **DOI de v1.0.0:** https://doi.org/10.5281/zenodo.21903851
 - **Concept DOI para todas las versiones:** https://doi.org/10.5281/zenodo.21903850
-- **DOI del registro OSF aceptado:** https://doi.org/10.17605/OSF.IO/ZTJXK
 
 La variable `severity` es un parámetro sintético de interrupción de red; no representa magnitud sísmica ni un umbral operativo oficial.
 
