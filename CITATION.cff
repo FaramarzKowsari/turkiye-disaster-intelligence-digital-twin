@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this software or its research results, cite the frozen v1.0.0 release with DOI 10.5281/zenodo.21903851. Use the Concept DOI 10.5281/zenodo.21903850 when referring to the project across versions. The accepted retrospective Open-Ended OSF Registration documenting methodology and provenance is DOI 10.17605/OSF.IO/ZTJXK."
+message: "For the research manuscript, cite the published engrXiv preprint DOI 10.31224/7979. For the frozen v1.0.0 software/research release, cite DOI 10.5281/zenodo.21903851. Use Concept DOI 10.5281/zenodo.21903850 for the project across versions. The accepted retrospective Open-Ended OSF Registration is DOI 10.17605/OSF.IO/ZTJXK."
 title: "Türkiye Disaster Intelligence Digital Twin"
 type: software
 version: 1.0.0
@@ -15,6 +15,9 @@ identifiers:
   - type: doi
     value: 10.17605/OSF.IO/ZTJXK
     description: "Accepted retrospective Open-Ended OSF Registration documenting research methodology and provenance"
+  - type: doi
+    value: 10.31224/7979
+    description: "Published engrXiv preprint DOI for the v1.0 research manuscript"
 license: MIT
 commit: ad6d508617ade5f86c9f602c070d3336b612d881
 repository-code: "https://github.com/FaramarzKowsari/turkiye-disaster-intelligence-digital-twin"
@@ -43,3 +46,4 @@ abstract: >-
   world-cluster bootstrap inference.
   The methodology and provenance are additionally preserved in an accepted retrospective
   Open-Ended OSF Registration (DOI 10.17605/OSF.IO/ZTJXK).
+  The associated research manuscript is published on engrXiv as Version 1 (DOI 10.31224/7979).

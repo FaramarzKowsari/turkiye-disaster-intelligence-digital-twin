@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-08-18 — Published engrXiv preprint integration
+
+- Integrated engrXiv Preprint / Version 1 DOI `10.31224/7979` into README, citation metadata, About page, and GitHub Pages.
+- Preserved Zenodo version/concept DOIs and the retrospective OSF registration DOI as distinct records.
+- Linked the repository publication index and archived preprint materials.
+
+
 ## 1.0.0 — 2026-08-12
 
 - Archived v1.0.0 on Zenodo: DOI `10.5281/zenodo.21903851`.

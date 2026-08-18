@@ -11,6 +11,8 @@ The platform combines public AFAD catalogue access, OpenStreetMap road and emerg
 - **Version DOI — v1.0.0:** https://doi.org/10.5281/zenodo.21903851
 - **Concept DOI — all versions:** https://doi.org/10.5281/zenodo.21903850
 - **Accepted OSF Registration DOI:** https://doi.org/10.17605/OSF.IO/ZTJXK
+- **Published engrXiv preprint DOI:** https://doi.org/10.31224/7979
+- **Publication index:** https://github.com/FaramarzKowsari/turkiye-disaster-intelligence-digital-twin/blob/main/PUBLICATIONS.md
 - **GitHub release:** https://github.com/FaramarzKowsari/turkiye-disaster-intelligence-digital-twin/releases/tag/v1.0.0
 - **Project website:** https://faramarzkowsari.github.io/turkiye-disaster-intelligence-digital-twin/
 - **Detailed project page:** https://faramarzkowsari.github.io/turkiye-disaster-intelligence-digital-twin/project.html
@@ -40,6 +42,7 @@ Platform; AFAD açık katalog erişimini, OpenStreetMap yol ve acil tesis verile
 - **v1.0.0 DOI:** https://doi.org/10.5281/zenodo.21903851
 - **Tüm sürümler için Concept DOI:** https://doi.org/10.5281/zenodo.21903850
 - **Kabul edilmiş OSF Registration DOI:** https://doi.org/10.17605/OSF.IO/ZTJXK
+- **Yayımlanmış engrXiv preprint DOI:** https://doi.org/10.31224/7979
 
 Buradaki `severity` deprem büyüklüğü değil, sentetik bir ağ kesintisi kontrol parametresidir.
 
@@ -54,6 +57,7 @@ La plataforma integra datos públicos de AFAD y OpenStreetMap, fallos viarios si
 - **DOI de v1.0.0:** https://doi.org/10.5281/zenodo.21903851
 - **Concept DOI para todas las versiones:** https://doi.org/10.5281/zenodo.21903850
 - **DOI del registro OSF aceptado:** https://doi.org/10.17605/OSF.IO/ZTJXK
+- **DOI del preprint publicado en engrXiv:** https://doi.org/10.31224/7979
 
 La variable `severity` es un parámetro sintético de interrupción de red; no representa magnitud sísmica ni un umbral operativo oficial.
 

@@ -31,6 +31,9 @@
   <a href="https://doi.org/10.17605/OSF.IO/ZTJXK">
     <img alt="OSF Registration DOI" src="https://img.shields.io/badge/OSF%20Registration-10.17605%2FOSF.IO%2FZTJXK-2D6A4F.svg">
   </a>
+  <a href="https://doi.org/10.31224/7979">
+  <img alt="engrXiv Preprint DOI" src="https://img.shields.io/badge/engrXiv-10.31224%2F7979-6f42c1.svg">
+</a>
   <img alt="Version 1.0.0" src="https://img.shields.io/badge/version-1.0.0-2f6f9f.svg">
   <img alt="Python 3.11+" src="https://img.shields.io/badge/Python-3.11%2B-3670A0.svg">
   <img alt="License MIT" src="https://img.shields.io/badge/License-MIT-168D73.svg">
@@ -43,6 +46,8 @@
   <a href="#türkçe">Türkçe</a> ·
   <a href="#español-españa">Español (España)</a> ·
   <a href="ABOUT.md">About</a> ·
+  <a href="PUBLICATIONS.md">Publications</a> ·
+  <a href="https://doi.org/10.31224/7979">engrXiv Preprint</a> ·
   <a href="https://faramarzkowsari.github.io/turkiye-disaster-intelligence-digital-twin/">Project Index</a> ·
   <a href="https://faramarzkowsari.github.io/turkiye-disaster-intelligence-digital-twin/project.html">Full Project</a> ·
   <a href="https://faramarzkowsari.github.io/turkiye-disaster-intelligence-digital-twin/research-findings.html">Research Findings</a> ·
@@ -76,6 +81,7 @@ road-disruption scenarios, paired Monte Carlo experiments and transparent assign
 - **Version DOI (v1.0.0):** [10.5281/zenodo.21903851](https://doi.org/10.5281/zenodo.21903851)
 - **Concept DOI (all versions):** [10.5281/zenodo.21903850](https://doi.org/10.5281/zenodo.21903850)
 - **OSF Registration DOI (accepted retrospective Open-Ended Registration):** [10.17605/OSF.IO/ZTJXK](https://doi.org/10.17605/OSF.IO/ZTJXK)
+- **Published engrXiv preprint DOI:** [10.31224/7979](https://doi.org/10.31224/7979)
 - **GitHub release:** [v1.0.0](https://github.com/FaramarzKowsari/turkiye-disaster-intelligence-digital-twin/releases/tag/v1.0.0)
 
 Use the **version DOI** when citing the frozen v1.0.0 research release. Use the **Concept DOI** when
@@ -86,6 +92,19 @@ experiment**. Instead of comparing unrelated random scenarios at each disruption
 stochastic world is progressively stressed across severity. This preserves common random numbers
 and creates nested road failures, allowing the experiment to locate where a response system moves
 from a resource-limited regime toward a connectivity-limited regime.
+
+### Published preprint
+
+The completed v1.0 research study is published as **engrXiv Preprint / Version 1**:
+
+**Faramarz Kowsari (2026). _Reliability Boundaries under Synthetic Post-Earthquake Road Disruption: A Reproducible Graph-Based Monte Carlo Study of Emergency-Response Accessibility in Beykoz, Istanbul._**
+
+- **DOI:** [10.31224/7979](https://doi.org/10.31224/7979)
+- **Publication index:** [PUBLICATIONS.md](PUBLICATIONS.md)
+- **Repository preprint record:** [research/preprints/engrxiv-7979/](research/preprints/engrxiv-7979/)
+- **License:** CC BY 4.0
+
+The engrXiv record is the citable research manuscript. The Zenodo version DOI remains the citation for the frozen v1.0.0 software/research release, and the OSF DOI remains the accepted retrospective registration record.
 
 ## What is implemented
 
@@ -236,6 +255,7 @@ platformunda birleştirilmiştir.
 - **Sürüm DOI'si (v1.0.0):** [10.5281/zenodo.21903851](https://doi.org/10.5281/zenodo.21903851)
 - **Concept DOI (tüm sürümler):** [10.5281/zenodo.21903850](https://doi.org/10.5281/zenodo.21903850)
 - **OSF Registration DOI (kabul edilmiş retrospektif Open-Ended Registration):** [10.17605/OSF.IO/ZTJXK](https://doi.org/10.17605/OSF.IO/ZTJXK)
+- **Yayımlanmış engrXiv preprint DOI:** [10.31224/7979](https://doi.org/10.31224/7979)
 - **GitHub sürümü:** [v1.0.0](https://github.com/FaramarzKowsari/turkiye-disaster-intelligence-digital-twin/releases/tag/v1.0.0)
 
 Dondurulmuş v1.0.0 araştırma sürümüne atıf yaparken **sürüm DOI'sini**; projenin tüm sürümlerini
@@ -326,6 +346,7 @@ transparentes de asignación.
 - **DOI de la versión (v1.0.0):** [10.5281/zenodo.21903851](https://doi.org/10.5281/zenodo.21903851)
 - **Concept DOI (todas las versiones):** [10.5281/zenodo.21903850](https://doi.org/10.5281/zenodo.21903850)
 - **DOI del registro OSF (registro abierto retrospectivo aceptado):** [10.17605/OSF.IO/ZTJXK](https://doi.org/10.17605/OSF.IO/ZTJXK)
+- **DOI del preprint publicado en engrXiv:** [10.31224/7979](https://doi.org/10.31224/7979)
 - **Versión de GitHub:** [v1.0.0](https://github.com/FaramarzKowsari/turkiye-disaster-intelligence-digital-twin/releases/tag/v1.0.0)
 
 Utilice el **DOI de la versión** para citar la edición de investigación congelada v1.0.0 y el
@@ -433,12 +454,13 @@ contenidos educativos.
 
 ## Citation
 
-Please use [`CITATION.cff`](CITATION.cff) for machine-readable citation metadata. The research methodology and provenance are additionally preserved in an accepted retrospective [Open-Ended OSF Registration](https://doi.org/10.17605/OSF.IO/ZTJXK). For the frozen
-v1.0.0 release, cite the version DOI:
+Please use [`CITATION.cff`](CITATION.cff) for machine-readable citation metadata. For the **research manuscript**, cite the published engrXiv preprint DOI [10.31224/7979](https://doi.org/10.31224/7979). The research methodology and provenance are additionally preserved in an accepted retrospective [Open-Ended OSF Registration](https://doi.org/10.17605/OSF.IO/ZTJXK). For the frozen
+v1.0.0 software/research release, cite the Zenodo version DOI:
 
 > Kowsari, F. (2026). *Türkiye Disaster Intelligence Digital Twin* (v1.0.0) [Computer software].
 > Zenodo. https://doi.org/10.5281/zenodo.21903851
 
+**engrXiv Preprint DOI:** [10.31224/7979](https://doi.org/10.31224/7979)  
 **Version DOI:** [10.5281/zenodo.21903851](https://doi.org/10.5281/zenodo.21903851)  
 **Concept DOI:** [10.5281/zenodo.21903850](https://doi.org/10.5281/zenodo.21903850)  
 **OSF Registration DOI:** [10.17605/OSF.IO/ZTJXK](https://doi.org/10.17605/OSF.IO/ZTJXK)  
